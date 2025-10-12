@@ -4,9 +4,9 @@
     <p>
         Hey, I'm <span>Nabeel Ahmed Jhatial</span>. a full-stack developer from Pakistan 🇵🇰 I love building stuff that solves real-world problems. Here’s a sneak peek into what I’ve been creating lately ❤️
     </p>
-    <ul class="mt-10 flex items-center gap-4 text-lg nav-items flex-1 justify-center">
-        <li><a href="https://www.linkedin.com/in/nabeelahmedjh/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/nabeelahmedjh" target="_blank">Github</a></li>
+    <ul class="mt-10 flex items-center  nav-items flex-1 justify-center">
+        <li class="text-5xl p-4 linkedin" ><a href="https://www.linkedin.com/in/nabeelahmedjh/" target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a></li>
+        <li class="text-5xl p-4"><a href="https://github.com/nabeelahmedjh" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a></li>
     </ul>
 </div>
 <app-featured-work *ngIf="showFeatured"></app-featured-work>

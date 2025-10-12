@@ -1,6 +1,10 @@
 import { APP_INITIALIZER, ApplicationConfig, inject, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import { routes } from './app.routes';
 import { ConfigService } from './config.service';
@@ -16,6 +20,17 @@ export const appConfig: ApplicationConfig = {
       multi: true,
       // Defer injection until the initializer runs to avoid early DI cycles
       useFactory: () => () => inject(ConfigService).load(),
+    },
+    {
+      provide: APP_INITIALIZER,
+      multi: true,
+      useFactory: () => {
+        const iconLibrary = inject(FaIconLibrary);
+        return () => {
+          // Add all icon packs to the library
+          iconLibrary.addIconPacks(fas, far, fab);
+        };
+      },
     },
   ]
 };
