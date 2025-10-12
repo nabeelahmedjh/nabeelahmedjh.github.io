@@ -1,0 +1,8 @@
+{
+    "features": {
+        "blog": true,
+        "projects": false,
+        "featuredProjects": false,
+        "media": false
+    }
+}

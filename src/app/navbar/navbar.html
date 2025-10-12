@@ -1,0 +1,39 @@
+<nav class="navbar">
+    <!-- Desktop Navigation -->
+    <div class="desktop-nav p-10 pl-30 pr-30">
+        <div class="nav flex items-center justify-between">
+            <div class="logo name flex-shrink-0">NJ</div>
+            <ul class="flex items-center gap-4 text-lg nav-items flex-1 justify-center">
+                <li *ngIf="showProjects"><a href="#projects">Projects</a></li>
+                <li *ngIf="showBlog"><a href="https://nabeelahmedjh.hashnode.dev/" target="_blank">Blog</a></li>
+                <li *ngIf="showMedia"><a href="#media">Media</a></li>
+            </ul>
+            <div class="logo resume flex-shrink-0">
+                <a href="/Nabeel_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-header flex items-center justify-between p-4">
+            <div class="logo name">NJ</div>
+            <button class="hamburger-menu" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()" (keydown.escape)="closeMobileMenu()">
+            <ul class="mobile-nav-items">
+                <li *ngIf="showProjects"><a href="#projects" (click)="closeMobileMenu()">Projects</a></li>
+                <li *ngIf="showBlog"><a href="https://nabeelahmedjh.hashnode.dev/" target="_blank" (click)="closeMobileMenu()">Blog</a></li>
+                <li *ngIf="showMedia"><a href="#media" (click)="closeMobileMenu()">Media</a></li>
+                <li><a href="/Nabeel_Resume.pdf" target="_blank" rel="noopener noreferrer" (click)="closeMobileMenu()">Resume</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
