@@ -13,6 +13,7 @@ import { ConfigService } from '../config.service';
 export class Navbar {
   private readonly cfg = inject(ConfigService);
   isMobileMenuOpen = false;
+  currentSection: '#home-section' | '#projects-section' | '#experience-section' = '#home-section';
 
   // Feature flags from runtime config
   readonly showProjects = this.cfg.getFeature('projects');
@@ -23,6 +24,10 @@ export class Navbar {
   readonly faBars = faBars;
   readonly faTimes = faTimes;
 
+  constructor() {
+    this.syncCurrentSection();
+  }
+
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
@@ -31,10 +36,34 @@ export class Navbar {
     this.isMobileMenuOpen = false;
   }
 
+  navigateToSection(event: Event, hash: '#home-section' | '#projects-section' | '#experience-section') {
+    event.preventDefault();
+    if (window.location.hash !== hash) {
+      window.location.hash = hash;
+    }
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    this.closeMobileMenu();
+    this.syncCurrentSection();
+  }
+
+  @HostListener('window:hashchange')
+  onHashChange() {
+    this.syncCurrentSection();
+  }
+
   @HostListener('document:keydown.escape')
   onEscapeKey() {
     if (this.isMobileMenuOpen) {
       this.closeMobileMenu();
     }
+  }
+
+  private syncCurrentSection() {
+    const hash = window.location.hash;
+    if (hash === '#projects-section' || hash === '#experience-section') {
+      this.currentSection = hash;
+      return;
+    }
+    this.currentSection = '#home-section';
   }
 }

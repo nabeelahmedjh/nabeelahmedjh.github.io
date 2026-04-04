@@ -1,9 +1,9 @@
 <div class="featured-work-section p-10">
-    <h1>Featured Work</h1>
+    <h1>Featured Engineering Work</h1>
     <div class="featured-items">
     @for (item of featuredItems; track $index) {
         <div class="featured-item">
-            <img src="images/profile.jpeg" [alt]="item.title">
+            <img [src]="item.imageUrl" [alt]="item.title">
             <div class="item-text">
                 <h4>{{item.title}}</h4>
                 <p>{{item.description}}</p>

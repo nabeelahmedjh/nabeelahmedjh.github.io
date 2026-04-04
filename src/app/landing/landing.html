@@ -1,13 +1,31 @@
 <app-navbar></app-navbar>
-<div class="hero-section p-10">
-    <img src="images/profile.jpeg" alt="Profile of Nabeel Ahmed Jhatial">
-    <p>
-        Hey, I'm <span>Nabeel Ahmed Jhatial</span>. a full-stack developer from Pakistan 🇵🇰 I love building stuff that solves real-world problems. Here’s a sneak peek into what I’ve been creating lately ❤️
-    </p>
-    <ul class="mt-5 flex items-center  nav-items flex-1 justify-center">
-        <li class="text-5xl p-4 linkedin" ><a href="https://www.linkedin.com/in/nabeelahmedjh/" target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a></li>
-        <li class="text-5xl p-4"><a href="https://github.com/nabeelahmedjh" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a></li>
-    </ul>
-</div>
-<app-featured-work *ngIf="showFeatured"></app-featured-work>
-<app-projects *ngIf="showProjects"></app-projects>
+<section id="home-section" class="hero-section" *ngIf="isHomeSection">
+    <div class="hero-overlay"></div>
+    <div class="tech-rain" aria-hidden="true">
+        @for (drop of techDrops; track $index) {
+            <span
+                class="tech-drop"
+                [style.left.%]="drop.left"
+                [style.animation-delay.s]="drop.delay"
+                [style.animation-duration.s]="drop.duration"
+                [style.font-size.rem]="drop.size"
+            >
+                <fa-icon [icon]="drop.icon"></fa-icon>
+            </span>
+        }
+    </div>
+    <div class="hero-content">
+        <p class="hero-tag">Software Engineer</p>
+        <h1>
+            Nabeel Ahmed Jhatial
+        </h1>
+        <p class="hero-intro">
+            I design and ship reliable full-stack products with clean architecture, solid performance, and user-first thinking. I build software that solves real business problems.
+        </p>
+        <ul class="nav-items">
+            <li class="linkedin"><a href="https://www.linkedin.com/in/nabeelahmedjh/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile"><fa-icon [icon]="faLinkedin"></fa-icon></a></li>
+            <li><a href="https://github.com/nabeelahmedjh" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile"><fa-icon [icon]="faGithub"></fa-icon></a></li>
+        </ul>
+    </div>
+</section>
+<app-projects *ngIf="showProjects && !isHomeSection"></app-projects>

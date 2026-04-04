@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: 'app-featured-work',
@@ -7,21 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './featured-work.scss'
 })
 export class FeaturedWork {
-  featuredItems = [
-    {
-      title: 'Project Alpha',
-      description: 'A cutting-edge project that revolutionizes technology.',
-      imageUrl: 'https://themeforest.net/search/dummy?srsltid=AfmBOoqoq-qB_X7BcbgFEYolvTtS4sKsAcap-yXI883dCCGAqK0Q8OhS'
-    },
-    {
-      title: 'Project Beta',
-      description: 'An innovative solution for modern problems.',
-      imageUrl: 'https://themeforest.net/search/dummy?srsltid=AfmBOoqoq-qB_X7BcbgFEYolvTtS4sKsAcap-yXI883dCCGAqK0Q8OhS'
-    },
-    {
-      title: 'Project Gamma',
-      description: 'A groundbreaking approach to software development.',
-      imageUrl: 'https://themeforest.net/search/dummy?srsltid=AfmBOoqoq-qB_X7BcbgFEYolvTtS4sKsAcap-yXI883dCCGAqK0Q8OhS'
-    }
-  ];
+  private readonly cfg = inject(ConfigService);
+  readonly featuredItems = this.cfg.value.featuredWorkItems;
 }

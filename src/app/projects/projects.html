@@ -1,1 +1,55 @@
-<p>projects works!</p>
+@if (activeSection === 'projects') {
+	<section id="projects-section" class="projects-section">
+		<div class="projects-header">
+			<p class="eyebrow">Build. Ship. Improve.</p>
+			<h2>Engineering Projects</h2>
+			<p>
+				A focused view of shipped projects, prototypes, and product builds.
+			</p>
+		</div>
+
+		<div class="projects-grid">
+			@for (item of projectHighlights; track item.title) {
+				<article class="project-card" [class.clickable]="!!item.redirectUrl" [attr.tabindex]="item.redirectUrl ? 0 : null" (click)="openCardLink(item.redirectUrl)" (keydown.enter)="openCardLink(item.redirectUrl)">
+					<img [src]="item.imageUrl || 'images/nabeel-with-horse.png'" [alt]="item.title" />
+					<div class="card-content">
+						<p class="card-tag">Project</p>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.description }}</p>
+						@if (item.redirectUrl) {
+							<p class="card-link">View details</p>
+						}
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+}
+
+@if (activeSection === 'experience') {
+	<section id="experience-section" class="projects-section">
+		<div class="projects-header">
+			<p class="eyebrow">Experience</p>
+			<h2>Engineering Experience</h2>
+			<p>
+				Professional roles, architecture ownership, and delivery impact.
+			</p>
+		</div>
+
+		<div class="projects-grid">
+			@for (item of experienceHighlights; track item.title) {
+				<article class="project-card" [class.clickable]="!!item.redirectUrl" [attr.tabindex]="item.redirectUrl ? 0 : null" (click)="openCardLink(item.redirectUrl)" (keydown.enter)="openCardLink(item.redirectUrl)">
+					<img [src]="item.imageUrl || 'images/nabeel-with-horse.png'" [alt]="item.title" />
+					<div class="card-content">
+						<p class="card-tag">Experience</p>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.description }}</p>
+						@if (item.redirectUrl) {
+							<p class="card-link">View details</p>
+						}
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+}
