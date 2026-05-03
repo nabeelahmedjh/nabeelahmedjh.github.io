@@ -15,6 +15,13 @@
         },
         {
             "category": "Project",
+            "title": "Shopify Stores Scraper",
+            "description": "A small Selenium-based scraper that collects product data from Shopify Stores.",
+            "imageUrl": "https://images.apifyusercontent.com/atU6ukaQmYyPEzOkAJbJVFrFf6qpQQCVtLrbFRuoXPI/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItSDVWMGF3RGJzSnhDVUxYRWotUEV2MGdtWDZBSC1zaG9waWZ5LWFwcC1zdG9yZS1zY3JhcGVyLTIucG5n.webp",
+            "redirectUrl": "https://github.com/nabeelahmedjh/products-scraping"
+        },
+        {
+            "category": "Project",
             "title": "Masnoon Duas",
             "description": "A library of Authentic Duas for every moment",
             "imageUrl": "https://media.licdn.com/dms/image/v2/D4D22AQGxi0Ve5Rj1Qw/feedshare-shrink_800/B4DZ1Eh2.ZJMAc-/0/1774971220351?e=1776902400&v=beta&t=dOHcQdWbLiDYLQV1Ami52beAVjvwtmEQjogEXwDttO0",
