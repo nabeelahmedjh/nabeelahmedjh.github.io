@@ -41,21 +41,18 @@ jobs:
         id: detect_dist
         run: |
           set -e
-          REPO_NAME="${{ github.event.repository.name }}"
-          # Try common Angular output locations
-          if [ -f dist/browser/index.html ]; then
-            DIST_DIR="dist/browser"
-          elif [ -f "dist/$REPO_NAME/browser/index.html" ]; then
-            DIST_DIR="dist/$REPO_NAME/browser"
-          elif [ -f "dist/$REPO_NAME/index.html" ]; then
-            DIST_DIR="dist/$REPO_NAME"
-          elif [ -f dist/index.html ]; then
-            DIST_DIR="dist"
-          else
+          # Locate the built index.html regardless of the Angular project folder
+          # name (the output folder is derived from angular.json, not the repo name).
+          INDEX_PATH="$(find dist -type f -name index.html -path '*/browser/index.html' | head -n 1)"
+          if [ -z "$INDEX_PATH" ]; then
+            INDEX_PATH="$(find dist -type f -name index.html | head -n 1)"
+          fi
+          if [ -z "$INDEX_PATH" ]; then
             echo "Could not find built index.html in dist. Contents:" >&2
             find dist -maxdepth 3 -type f -name 'index.html' -print || true
             exit 1
           fi
+          DIST_DIR="$(dirname "$INDEX_PATH")"
           echo "Using DIST_DIR=$DIST_DIR"
           echo "dist_dir=$DIST_DIR" >> "$GITHUB_OUTPUT"
           cp "$DIST_DIR/index.html" "$DIST_DIR/404.html"
