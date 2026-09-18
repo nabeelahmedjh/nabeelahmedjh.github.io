@@ -1,0 +1,128 @@
+<section id="volunteering-section" class="volunteering-section">
+	<div class="volunteering-header">
+		<p class="eyebrow">Leadership &amp; Community</p>
+		<h2>Volunteering &amp; Leadership</h2>
+		<p>
+			Community involvement, workshops, and leadership roles — from student
+			ambassadorships to speaking and mentoring across tech communities.
+		</p>
+	</div>
+
+	<div class="timeline">
+		@for (entry of entries; track entry.item.title) {
+			<article class="timeline-item">
+				<span class="timeline-marker" aria-hidden="true"></span>
+				<div class="timeline-card">
+					<div class="card-content">
+						<p class="card-tag">Leadership</p>
+						<h3>{{ entry.item.title }}</h3>
+						<p class="card-meta">
+							@if (entry.item.role) {<span>{{ entry.item.role }}</span>}
+							@if (entry.item.role && entry.item.organization) {<span class="sep">&middot;</span>}
+							@if (entry.item.organization) {<span>{{ entry.item.organization }}</span>}
+							@if (entry.item.period) {<span class="sep">&middot;</span><span>{{ entry.item.period }}</span>}
+						</p>
+						@if (entry.item.description) {
+							<p class="card-desc">{{ entry.item.description }}</p>
+						}
+						@if (entry.item.bullets && entry.item.bullets.length) {
+							<ul class="card-bullets">
+								@for (point of entry.item.bullets; track $index) {
+									<li>{{ point }}</li>
+								}
+							</ul>
+						}
+						@if (entry.item.redirectUrl) {
+							<a
+								class="card-link"
+								[href]="entry.item.redirectUrl"
+								target="_blank"
+								rel="noopener noreferrer"
+							>View details</a>
+						}
+					</div>
+
+					@if (entry.images.length) {
+						<div class="card-gallery" [class.single]="entry.images.length === 1">
+							@for (img of entry.images; track $index) {
+								<button
+									type="button"
+									class="thumb"
+									(click)="openImage(entry, $index)"
+									[attr.aria-label]="'View image ' + ($index + 1) + ' of ' + entry.item.title"
+								>
+									<img [src]="img" [alt]="entry.item.title + ' — image ' + ($index + 1)" loading="lazy" />
+									<span class="media-zoom" aria-hidden="true"><fa-icon [icon]="faImage"></fa-icon></span>
+									@if (entry.images.length > 1) {
+										<span class="thumb-count" aria-hidden="true">{{ $index + 1 }}/{{ entry.images.length }}</span>
+									}
+								</button>
+							}
+						</div>
+					} @else {
+						<div class="card-gallery media-placeholder" aria-hidden="true">
+							<fa-icon [icon]="faImage"></fa-icon>
+							<span>Add photos</span>
+						</div>
+					}
+				</div>
+			</article>
+		}
+	</div>
+</section>
+
+@if (selected) {
+	<div
+		class="lightbox"
+		role="dialog"
+		aria-modal="true"
+		[attr.aria-label]="selected.item.title"
+		(click)="closeImage()"
+	>
+		<div class="lightbox-content" (click)="$event.stopPropagation()">
+			<button type="button" class="lightbox-close" (click)="closeImage()" aria-label="Close image">
+				<fa-icon [icon]="faTimes"></fa-icon>
+			</button>
+
+			<div class="lightbox-stage">
+				@if (selected.images.length > 1) {
+					<button type="button" class="lightbox-nav prev" (click)="prevImage()" aria-label="Previous image">
+						<fa-icon [icon]="faChevronLeft"></fa-icon>
+					</button>
+				}
+				<img [src]="selected.images[selectedIndex]" [alt]="selected.item.title" />
+				@if (selected.images.length > 1) {
+					<button type="button" class="lightbox-nav next" (click)="nextImage()" aria-label="Next image">
+						<fa-icon [icon]="faChevronRight"></fa-icon>
+					</button>
+					<span class="lightbox-counter">{{ selectedIndex + 1 }} / {{ selected.images.length }}</span>
+				}
+			</div>
+
+			<div class="lightbox-caption">
+				<h3>{{ selected.item.title }}</h3>
+				<p class="card-meta">
+					@if (selected.item.role) {<span>{{ selected.item.role }}</span>}
+					@if (selected.item.role && selected.item.organization) {<span class="sep">&middot;</span>}
+					@if (selected.item.organization) {<span>{{ selected.item.organization }}</span>}
+					@if (selected.item.period) {<span class="sep">&middot;</span><span>{{ selected.item.period }}</span>}
+				</p>
+				@if (selected.images.length > 1) {
+					<div class="lightbox-thumbs">
+						@for (img of selected.images; track $index) {
+							<button
+								type="button"
+								class="lightbox-thumb"
+								[class.active]="$index === selectedIndex"
+								(click)="showImage($index)"
+								[attr.aria-label]="'Show image ' + ($index + 1)"
+							>
+								<img [src]="img" alt="" />
+							</button>
+						}
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+}
