@@ -30,9 +30,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular app (for custom domain root)
+      - name: Build Angular app (root base href)
         run: |
-          # Always use root path for custom domain deployment
+          # User site (nabeelahmedjh.github.io) is served from the root path,
+          # so always use "/" as the base href.
           BASE="/"
           echo "Using base href: $BASE"
           npx ng build --base-href "$BASE"
