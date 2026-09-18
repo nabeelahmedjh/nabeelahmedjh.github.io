@@ -163,11 +163,19 @@
     }
 }
 
-// Stack the hero intro above the recommendations panel on narrow screens
-@media (max-width: 900px) {
+// Stack the hero intro above the recommendations panel on narrow screens.
+// The two panels need ~1266px side-by-side, so stack before they overflow and
+// snap to the left (e.g. at 150% browser zoom on 1440/1536px displays).
+@media (max-width: 1100px) {
     .hero-section {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        width: 100%;
+        margin: clamp(1rem, 3vw, 2.2rem) clamp(1rem, 3vw, 2.2rem) 0;
     }
 }
 

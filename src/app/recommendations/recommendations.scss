@@ -235,8 +235,9 @@
     }
 }
 
-// On narrow screens the hero stacks, so drop the right margin and let it fill
-@media (max-width: 900px) {
+// On narrow screens the hero stacks, so drop the right margin and let it fill.
+// Kept in sync with the landing hero stack breakpoint (1100px).
+@media (max-width: 1100px) {
     :host:not(.rec-wide) {
         width: auto;
         margin: 0 1rem 1.2rem;
