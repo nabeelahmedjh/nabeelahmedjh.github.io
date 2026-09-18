@@ -11,7 +11,7 @@ export class Projects {
   private readonly cfg = inject(ConfigService);
   activeSection: 'projects' | 'experience' = 'projects';
   readonly projectHighlights = this.cfg.value.projectHighlights;
-  readonly experienceHighlights = this.cfg.value.experienceHighlights;
+  readonly experienceTimeline = this.cfg.value.experienceTimeline;
 
   constructor() {
     this.syncSectionFromHash();

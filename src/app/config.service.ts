@@ -5,11 +5,26 @@ export interface AppConfig {
   features: Record<string, boolean>;
   projectHighlights: EngineeringHighlight[];
   experienceHighlights: EngineeringHighlight[];
+  experienceTimeline: ExperienceItem[];
   engineeringHighlights: EngineeringHighlight[];
   featuredWorkItems: FeaturedWorkItem[];
   projectSections: ProjectSection[];
   volunteeringHighlights: VolunteeringItem[];
   recommendationItems: RecommendationItem[];
+}
+
+export interface ExperienceItem {
+  /** Job title, e.g. "Backend Engineer". */
+  role: string;
+  /** Company / organization name. */
+  company: string;
+  /** Location and work mode, e.g. "Dubai, Remote". */
+  location?: string;
+  /** Employment period, e.g. "May 2026 – Present". */
+  period?: string;
+  /** Achievement / responsibility bullets. */
+  bullets?: string[];
+  redirectUrl?: string;
 }
 
 export interface RecommendationItem {
@@ -132,6 +147,43 @@ const defaultConfig: AppConfig = {
       category: 'Engineering',
     },
   ],
+  experienceTimeline: [
+    {
+      role: 'Backend Engineer',
+      company: 'Coldsend',
+      location: 'Dubai, Remote',
+      period: 'May 2026 – Present',
+      bullets: [
+        'Working with FastAPI microservices and RabbitMQ as service bus',
+        'Migrated locally hosted PostgreSQL to Digital Ocean managed services for better reliability and performance',
+        'Replaced Mailcow with Stalwart, a Rust-based mail server, reducing memory usage by 90% and improving overall system stability under sustained IMAP connections',
+      ],
+    },
+    {
+      role: 'Jr. Software Engineer',
+      company: 'Expertflow',
+      location: 'Switzerland, Remote',
+      period: 'Dec 2023 – May 2026',
+      bullets: [
+        'Developed and maintained MEAN stack applications powering CRM solutions',
+        'Designed and implemented a centralized GraphQL gateway microservice, streamlining search across internal and external data sources',
+        'Migrated client-side Angular components from v8 to v14, reducing CI/CD pipeline completion time by 50%',
+        'Introduced TDD and BDD practices into client-side components, improving test coverage and code quality',
+      ],
+    },
+    {
+      role: 'Software Engineer Intern',
+      company: 'Expertflow',
+      location: 'Switzerland, Remote',
+      period: '',
+      bullets: [
+        "Learned about the company's operations and agile methodologies",
+        'Created a POC for a Socket.IO chat application using Node.js and containerized it via Docker',
+        'Studied operating systems and their applications in multi-threaded programming',
+        'Successfully transitioned into the full-time role',
+      ],
+    },
+  ],
   engineeringHighlights: [
     {
       title: 'Yurt: Collaborative Learning Platform',
@@ -236,6 +288,7 @@ export class ConfigService {
         features: { ...defaultConfig.features, ...(data.features ?? {}) } as AppConfig['features'],
         projectHighlights: (data.projectHighlights as EngineeringHighlight[] | undefined) ?? legacyProjects,
         experienceHighlights: (data.experienceHighlights as EngineeringHighlight[] | undefined) ?? legacyExperience,
+        experienceTimeline: (data.experienceTimeline as ExperienceItem[] | undefined) ?? defaultConfig.experienceTimeline,
         engineeringHighlights: (data.engineeringHighlights as EngineeringHighlight[] | undefined) ?? legacyHighlights,
         featuredWorkItems: (data.featuredWorkItems as FeaturedWorkItem[] | undefined) ?? defaultConfig.featuredWorkItems,
         projectSections: (data.projectSections as ProjectSection[] | undefined) ?? defaultConfig.projectSections,

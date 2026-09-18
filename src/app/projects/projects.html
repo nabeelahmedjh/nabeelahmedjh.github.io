@@ -30,22 +30,32 @@
 	<section id="experience-section" class="projects-section">
 		<div class="projects-header">
 			<p class="eyebrow">Experience</p>
-			<h2>Engineering Experience</h2>
+			<h2>Professional Experience</h2>
 			<p>
 				Professional roles, architecture ownership, and delivery impact.
 			</p>
 		</div>
 
-		<div class="projects-grid">
-			@for (item of experienceHighlights; track item.title) {
-				<article class="project-card" [class.clickable]="!!item.redirectUrl" [attr.tabindex]="item.redirectUrl ? 0 : null" (click)="openCardLink(item.redirectUrl)" (keydown.enter)="openCardLink(item.redirectUrl)">
-					<img [src]="item.imageUrl || 'images/nabeel-with-horse.png'" [alt]="item.title" />
-					<div class="card-content">
-						<p class="card-tag">Experience</p>
-						<h3>{{ item.title }}</h3>
-						<p>{{ item.description }}</p>
-						@if (item.redirectUrl) {
-							<p class="card-link">View details</p>
+		<div class="timeline">
+			@for (item of experienceTimeline; track item.company + item.role) {
+				<article class="timeline-item">
+					<span class="timeline-marker" aria-hidden="true"></span>
+					<div class="timeline-content">
+						<div class="timeline-head">
+							<h3>{{ item.role }}</h3>
+							@if (item.period) {
+								<span class="timeline-period">{{ item.period }}</span>
+							}
+						</div>
+						<p class="timeline-org">
+							{{ item.company }}@if (item.location) { &ndash; {{ item.location }} }
+						</p>
+						@if (item.bullets && item.bullets.length) {
+							<ul class="timeline-bullets">
+								@for (bullet of item.bullets; track bullet) {
+									<li>{{ bullet }}</li>
+								}
+							</ul>
 						}
 					</div>
 				</article>

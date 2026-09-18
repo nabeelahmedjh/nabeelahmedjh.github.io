@@ -28,6 +28,10 @@ interface CompanyLogo {
 interface Achievement {
   title: string;
   description: string;
+  /** Internal section anchor (e.g. '#volunteering-section') to switch to on click. */
+  section?: string;
+  /** External URL to open in a new tab on click. */
+  url?: string;
 }
 
 @Component({
@@ -68,12 +72,10 @@ export class Landing {
   ];
 
   readonly achievements: Achievement[] = [
-    { title: 'Led Angular Modernization', description: 'Drove the migration of a large client suite from Angular v8 to v14, improving maintainability and developer experience.' },
-    { title: 'Shipped GraphQL Gateway', description: 'Designed and delivered a centralized GraphQL gateway that unified search across internal and external data sources.' },
-    { title: 'Faster CI/CD Pipelines', description: 'Reduced CI/CD pipeline completion time, enabling quicker and more reliable releases across the team.' },
-    { title: 'Production Platform Launch', description: 'Built and launched Yurt, a full-stack collaborative learning platform with real-time features and an AI assistant.' },
-    { title: 'Quality Champion', description: 'Introduced TDD/BDD practices that raised test coverage and release confidence across projects.' },
-    { title: 'Consistent Delivery', description: 'Recognized for reliably shipping features with clean architecture and user-first thinking.' },
+    { title: 'Lead, Google Developer Student Club & Microsoft Learn Student Ambassador', description: 'Organized tech conferences, workshops, and hackathons; conducted sessions on Python, OOP, DSA, and Git to empower students with industry-ready skills.', section: '#volunteering-section' },
+    { title: 'Campus Gold Medalist', description: 'Achieved the highest CGPA in the undergraduate batch (3.82/4.00), earning the Campus Gold Medal and Institute Silver Medal.', url: 'https://drive.google.com/file/d/1IeTjssKrj_DZmVJW_jp6sWXVXQUW61Dv/view?usp=sharing' },
+    { title: '2 Years of Professional Experience,', description: 'Worked with international, product-based firms.', section: '#experience-section' },
+    { title: 'Speed Programming Award', description: '2nd place in CUI’s University-level speed programming competition.', url: 'https://drive.google.com/file/d/1SvU53yKcriG_1rBO39r5ckUXSDDwBbX9/view?usp=sharing' },
   ];
 
   constructor() {
@@ -83,6 +85,14 @@ export class Landing {
   @HostListener('window:hashchange')
   onHashChange() {
     this.syncHomeFromHash();
+  }
+
+  goToSection(event: Event, section: string) {
+    event.preventDefault();
+    if (window.location.hash !== section) {
+      window.location.hash = section;
+    }
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
   private syncHomeFromHash() {

@@ -121,32 +121,67 @@
             "description": "A library of Authentic Duas for every moment",
             "imageUrl": "https://media.licdn.com/dms/image/v2/D4D22AQGxi0Ve5Rj1Qw/feedshare-shrink_800/B4DZ1Eh2.ZJMAc-/0/1774971220351?e=1776902400&v=beta&t=dOHcQdWbLiDYLQV1Ami52beAVjvwtmEQjogEXwDttO0",
             "redirectUrl": "https://masnoon.app/"
-        }
-    ],
-    "experienceHighlights": [
+        },
         {
-            "category": "Work",
+            "category": "Project",
             "title": "GraphQL Gateway at Expertflow",
             "description": "Designed and implemented a centralized GraphQL gateway microservice to streamline search across internal and external data sources.",
             "imageUrl": "https://www.expertflow.com/wp-content/uploads/new-logo-1024x250.png",
             "redirectUrl": "https://www.expertflow.com"
         },
         {
-            "category": "Work",
+            "category": "Project",
             "title": "Angular Upgrade Initiative",
             "description": "Migrated Angular client components from v8 to v14 and helped reduce CI/CD pipeline completion time while improving maintainability.",
             "imageUrl": "/images/ng-08-to-14.png",
             "redirectUrl": "https://www.expertflow.com"
         },
         {
-            "category": "Work",
+            "category": "Project",
             "title": "Software Engineering Experience",
             "description": "Software Engineer at Expertflow (Lahore), building and maintaining MEAN stack CRM applications with production-focused architecture and delivery practices."
         },
         {
-            "category": "Engineering",
+            "category": "Project",
             "title": "Cloud, CI/CD, and Quality",
             "description": "Hands-on with Docker, Kubernetes, Git-based workflows, and TDD/BDD practices to improve release reliability and engineering quality."
+        }
+    ],
+    "experienceTimeline": [
+        {
+            "role": "Backend Engineer",
+            "company": "Coldsend",
+            "location": "Dubai, Remote",
+            "period": "May 2026 – Present",
+            "bullets": [
+                "Working with FastAPI microservices and RabbitMQ as service bus",
+                "Migrated locally hosted PostgreSQL to Digital Ocean managed services for better reliability and performance",
+                "Replaced Mailcow with Stalwart, a Rust-based mail server, reducing memory usage by 90% and improving overall system stability under sustained IMAP connections"
+            ]
+        },
+        {
+            "role": "Jr. Software Engineer",
+            "company": "Expertflow",
+            "location": "Switzerland, Remote",
+            "period": "Dec 2023 – May 2026",
+            "bullets": [
+                "Developed and maintained MEAN stack applications powering CRM solutions",
+                "Designed and implemented a centralized GraphQL gateway microservice, streamlining search across internal and external data sources",
+                "Migrated client-side Angular components from v8 to v14, reducing CI/CD pipeline completion time by 50%",
+                "Introduced TDD and BDD practices into client-side components, improving test coverage and code quality"
+            ]
+        },
+        {
+            "role": "Software Engineer Intern",
+            "company": "Expertflow",
+            "location": "Switzerland, Remote",
+            "period": "",
+            "bullets": [
+                "Learned about the company's operations and agile methodologies",
+                "Created a POC for a Socket.IO chat application using Node.js and containerized it via Docker",
+                "Studied operating systems and their applications in multi-threaded programming",
+                "Successfully transitioned into the full-time role"
+            ]
         }
     ],
     "volunteeringHighlights": [

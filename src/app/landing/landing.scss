@@ -295,6 +295,16 @@
             font-weight: 700;
             margin-right: 0.4rem;
         }
+
+        .title-link {
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover strong,
+            &:focus-visible strong {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
