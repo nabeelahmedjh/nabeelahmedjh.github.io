@@ -7,6 +7,7 @@ import { faTrophy, faRocket, faAward, faStar, faCertificate, faMedal } from '@fo
 import { Navbar } from '../navbar/navbar';
 import { Projects } from '../projects/projects';
 import { Volunteering } from '../volunteering/volunteering';
+import { Recommendations } from '../recommendations/recommendations';
 import { ConfigService } from '../config.service';
 
 interface TechDrop {
@@ -30,7 +31,7 @@ interface Achievement {
 
 @Component({
   selector: 'app-landing',
-  imports: [CommonModule, FontAwesomeModule, Navbar, Projects, Volunteering],
+  imports: [CommonModule, FontAwesomeModule, Navbar, Projects, Volunteering, Recommendations],
   templateUrl: './landing.html',
   styleUrl: './landing.scss'
 })
@@ -38,6 +39,7 @@ export class Landing {
   private readonly cfg = inject(ConfigService);
   readonly showProjects = this.cfg.getFeature('projects');
   readonly showVolunteering = this.cfg.getFeature('volunteering');
+  readonly showRecommendations = this.cfg.getFeature('recommendations');
   isHomeSection = true;
   isVolunteeringSection = false;
   readonly year = new Date().getFullYear();

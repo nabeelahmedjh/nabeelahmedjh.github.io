@@ -187,6 +187,161 @@
     }
 }
 
+// Hire me trigger button (desktop) - inherits the .logo pill styling
+.logo.resume button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-weight: 800;
+    color: inherit;
+    cursor: pointer;
+}
+
+// Hire me trigger button (mobile menu)
+.mobile-hire-btn {
+    background: transparent;
+    border: none;
+    font: inherit;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    background-image: linear-gradient(120deg, #00d084 0%, #00d084 100%);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    &:hover {
+        background-size: 100% 100%;
+        color: #022617;
+        transform: translateY(-2px);
+    }
+}
+
+// Hire me dialog
+.hire-dialog-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    z-index: 1000;
+    animation: hire-fade-in 0.2s ease-out;
+}
+
+.hire-dialog {
+    width: min(420px, 100%);
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 24px 48px rgba(2, 24, 16, 0.28);
+    padding: 1.25rem 1.4rem 1.5rem;
+    animation: hire-pop-in 0.22s ease-out;
+}
+
+.hire-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    h2 {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: #064e3b;
+    }
+}
+
+.hire-dialog-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.06);
+    color: #0f172a;
+    cursor: pointer;
+    transition: background-color 0.22s ease, color 0.22s ease;
+
+    &:hover {
+        background: #00d084;
+        color: #022617;
+    }
+}
+
+.hire-dialog-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 0.85rem 1rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.9);
+        transition: background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+
+        fa-icon {
+            font-size: 1.25rem;
+            color: #059669;
+        }
+
+        &:hover {
+            background: rgba(0, 208, 132, 0.16);
+            border-color: #00d084;
+            color: #064e3b;
+            transform: translateY(-1px);
+        }
+
+        &:focus-visible {
+            outline: 2px solid #10b981;
+            outline-offset: 2px;
+        }
+    }
+}
+
+@keyframes hire-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hire-pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 // Responsive Breakpoints
 @media (max-width: 767px) {
     .desktop-nav {

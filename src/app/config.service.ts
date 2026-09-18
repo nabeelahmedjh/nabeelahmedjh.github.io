@@ -9,6 +9,20 @@ export interface AppConfig {
   featuredWorkItems: FeaturedWorkItem[];
   projectSections: ProjectSection[];
   volunteeringHighlights: VolunteeringItem[];
+  recommendationItems: RecommendationItem[];
+}
+
+export interface RecommendationItem {
+  /** Recommender's full name. */
+  name: string;
+  /** Recommender's role / LinkedIn headline. */
+  headline?: string;
+  /** How the recommender worked with Nabeel. */
+  relationship?: string;
+  /** Date the recommendation was given. */
+  date?: string;
+  /** The recommendation body. Paragraphs separated by blank lines. */
+  text: string;
 }
 
 export interface VolunteeringItem {
@@ -51,7 +65,17 @@ const defaultConfig: AppConfig = {
     featuredProjects: true,
     media: true,
     volunteering: true,
+    recommendations: true,
   },
+  recommendationItems: [
+    {
+      name: 'Recommender Name',
+      headline: 'Their role or headline',
+      relationship: 'How they worked with Nabeel',
+      date: 'Month D, YYYY',
+      text: 'The recommendation text goes here.',
+    },
+  ],
   volunteeringHighlights: [
     {
       title: 'Leadership Role / Activity Title',
@@ -216,6 +240,7 @@ export class ConfigService {
         featuredWorkItems: (data.featuredWorkItems as FeaturedWorkItem[] | undefined) ?? defaultConfig.featuredWorkItems,
         projectSections: (data.projectSections as ProjectSection[] | undefined) ?? defaultConfig.projectSections,
         volunteeringHighlights: (data.volunteeringHighlights as VolunteeringItem[] | undefined) ?? defaultConfig.volunteeringHighlights,
+        recommendationItems: (data.recommendationItems as RecommendationItem[] | undefined) ?? defaultConfig.recommendationItems,
       };
       this._config.set(merged);
     } catch (err: any) {

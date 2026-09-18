@@ -27,7 +27,10 @@
             <li><a href="https://github.com/nabeelahmedjh" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile"><fa-icon [icon]="faGithub"></fa-icon></a></li>
         </ul>
     </div>
+    <app-recommendations *ngIf="showRecommendations"></app-recommendations>
 </section>
+
+<app-recommendations layout="wide" *ngIf="showRecommendations && isHomeSection"></app-recommendations>
 
 <section class="overview-section companies-section" *ngIf="isHomeSection">
     <div class="overview-header">
@@ -61,6 +64,7 @@
         }
     </div>
 </section>
+
 <app-projects *ngIf="showProjects && !isHomeSection && !isVolunteeringSection"></app-projects>
 <app-volunteering *ngIf="showVolunteering && isVolunteeringSection"></app-volunteering>
 

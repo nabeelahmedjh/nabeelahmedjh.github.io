@@ -1,0 +1,60 @@
+<div
+    class="rec-carousel"
+    *ngIf="count > 0"
+    (mouseenter)="pause()"
+    (mouseleave)="resume()"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="Recommendations"
+>
+    <header class="rec-section-head" *ngIf="isWide">
+        <p class="rec-eyebrow"><fa-icon [icon]="faQuoteLeft" aria-hidden="true"></fa-icon> Testimonials</p>
+        <h2>Recommendations</h2>
+        <p>What colleagues, mentors and managers say about working with me.</p>
+    </header>
+
+    <div class="rec-viewport">
+        <article class="rec-card" *ngFor="let slide of activeSlides">
+            <header class="rec-card-head">
+                <span class="rec-avatar" aria-hidden="true">{{ slide.initials }}</span>
+                <div class="rec-who">
+                    <h3>{{ slide.name }}</h3>
+                    <p class="rec-headline" *ngIf="slide.headline">{{ slide.headline }}</p>
+                </div>
+                <fa-icon class="rec-quote-mark" [icon]="faQuoteLeft" aria-hidden="true"></fa-icon>
+            </header>
+
+            <p class="rec-meta" *ngIf="slide.date || slide.relationship">
+                <span *ngIf="slide.date">{{ slide.date }}</span>
+                <span *ngIf="slide.date && slide.relationship"> &middot; </span>
+                <span *ngIf="slide.relationship">{{ slide.relationship }}</span>
+            </p>
+
+            <div class="rec-body">
+                <p *ngFor="let para of slide.paragraphs">{{ para }}</p>
+            </div>
+        </article>
+    </div>
+
+    <div class="rec-controls">
+        <button type="button" class="rec-arrow" (click)="prev()" aria-label="Previous recommendation">
+            <fa-icon [icon]="faChevronLeft"></fa-icon>
+        </button>
+
+        <div class="rec-dots">
+            <button
+                type="button"
+                *ngFor="let slide of slides; let i = index"
+                class="rec-dot"
+                [class.active]="i === currentIndex"
+                (click)="goTo(i)"
+                [attr.aria-label]="'Show recommendation from ' + slide.name"
+                [attr.aria-current]="i === currentIndex ? 'true' : null"
+            ></button>
+        </div>
+
+        <button type="button" class="rec-arrow" (click)="next()" aria-label="Next recommendation">
+            <fa-icon [icon]="faChevronRight"></fa-icon>
+        </button>
+    </div>
+</div>

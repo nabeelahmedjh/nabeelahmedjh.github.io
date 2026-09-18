@@ -1,8 +1,15 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faFileLines } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ConfigService } from '../config.service';
+
+export interface HireLink {
+  label: string;
+  url: string;
+  icon: typeof faFileLines;
+}
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +20,7 @@ import { ConfigService } from '../config.service';
 export class Navbar {
   private readonly cfg = inject(ConfigService);
   isMobileMenuOpen = false;
+  isHireDialogOpen = false;
   currentSection: '#home-section' | '#projects-section' | '#experience-section' | '#volunteering-section' = '#home-section';
 
   // Feature flags from runtime config
@@ -25,6 +33,18 @@ export class Navbar {
   readonly faBars = faBars;
   readonly faTimes = faTimes;
 
+  // TODO: Replace these placeholders with the actual Google Drive PDF links.
+  private static readonly RESUME_URL = 'https://drive.google.com/REPLACE_WITH_RESUME_LINK';
+  private static readonly TRANSCRIPT_URL = 'https://drive.google.com/REPLACE_WITH_TRANSCRIPT_LINK';
+
+  // Items shown in the "Hire me" dialog, in display order.
+  readonly hireLinks: HireLink[] = [
+    { label: 'Resume', url: Navbar.RESUME_URL, icon: faFileLines },
+    { label: 'Transcript', url: Navbar.TRANSCRIPT_URL, icon: faFileLines },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nabeelahmedjh/', icon: faLinkedin },
+    { label: 'GitHub', url: 'https://github.com/nabeelahmedjh', icon: faGithub },
+  ];
+
   constructor() {
     this.syncCurrentSection();
   }
@@ -35,6 +55,18 @@ export class Navbar {
 
   closeMobileMenu() {
     this.isMobileMenuOpen = false;
+  }
+
+  openHireDialog(event?: Event) {
+    if (event) {
+      event.preventDefault();
+    }
+    this.isMobileMenuOpen = false;
+    this.isHireDialogOpen = true;
+  }
+
+  closeHireDialog() {
+    this.isHireDialogOpen = false;
   }
 
   navigateToSection(event: Event, hash: '#home-section' | '#projects-section' | '#experience-section' | '#volunteering-section') {
@@ -54,6 +86,9 @@ export class Navbar {
 
   @HostListener('document:keydown.escape')
   onEscapeKey() {
+    if (this.isHireDialogOpen) {
+      this.closeHireDialog();
+    }
     if (this.isMobileMenuOpen) {
       this.closeMobileMenu();
     }

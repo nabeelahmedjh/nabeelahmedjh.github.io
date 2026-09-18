@@ -12,7 +12,7 @@
                 <li *ngIf="showMedia"><a href="#media">Media</a></li>
             </ul>
             <div class="logo resume flex-shrink-0">
-                <a href="/Nabeel_Resume.pdf" target="_blank" rel="noopener noreferrer">Hire me</a>
+                <button type="button" (click)="openHireDialog($event)" aria-haspopup="dialog" [attr.aria-expanded]="isHireDialogOpen">Hire me</button>
             </div>
         </div>
     </div>
@@ -37,9 +37,29 @@
                 <li *ngIf="showProjects"><a href="#projects-section" (click)="navigateToSection($event, '#projects-section')">Projects</a></li>
                 <li *ngIf="showBlog"><a href="https://nabeelahmedjh.hashnode.dev/" target="_blank" (click)="closeMobileMenu()">Blog</a></li>
                 <li *ngIf="showMedia"><a href="#media" (click)="closeMobileMenu()">Media</a></li>
-                <li><a href="/Nabeel_Resume.pdf" target="_blank" rel="noopener noreferrer" (click)="closeMobileMenu()">Resume</a></li>
+                <li><button type="button" class="mobile-hire-btn" (click)="openHireDialog($event)" aria-haspopup="dialog" [attr.aria-expanded]="isHireDialogOpen">Hire me</button></li>
             </ul>
         </div>
     </div>
 </nav>
+
+<!-- Hire me dialog -->
+<div class="hire-dialog-backdrop" *ngIf="isHireDialogOpen" (click)="closeHireDialog()" role="presentation">
+    <div class="hire-dialog" role="dialog" aria-modal="true" aria-labelledby="hire-dialog-title" (click)="$event.stopPropagation()">
+        <div class="hire-dialog-header">
+            <h2 id="hire-dialog-title">Get in touch</h2>
+            <button type="button" class="hire-dialog-close" (click)="closeHireDialog()" aria-label="Close dialog">
+                <fa-icon [icon]="faTimes"></fa-icon>
+            </button>
+        </div>
+        <ul class="hire-dialog-list">
+            <li *ngFor="let link of hireLinks">
+                <a [href]="link.url" target="_blank" rel="noopener noreferrer" (click)="closeHireDialog()">
+                    <fa-icon [icon]="link.icon"></fa-icon>
+                    <span>{{ link.label }}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
