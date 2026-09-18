@@ -11,14 +11,14 @@
         {
             "name": "Jawad Bokhari",
             "headline": "Head of Engineering @ Expertflow",
-            "relationship": "Jawad was head of Engineering team",
+            "relationship": "Sir Jawad was head of Engineering department",
             "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
             "text": "Nabeel was a valuable and capable Software Engineer during his time with us at Expertflow. What stood out most was his consistency: he combined strong technical fundamentals with a genuine sense of ownership over the quality of what he shipped, never treating a task as done until it was done right. He approached problems methodically, taking the time to understand the underlying system rather than settling for the quickest fix, which made his code easy to trust and build on. He was also a dependable collaborator who communicated clearly, followed through on commitments, and raised issues early rather than letting them surface downstream."
         },
         {
             "name": "Sabahat Haneef",
             "headline": "Technical Lead @ Expertflow",
-            "relationship": "Ma'am Sabahat was my Lead",
+            "relationship": "Ma'am Sabahat was my team Lead",
             "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
             "text": "I had the opportunity to work with Nabeel for almost two years, and during this time, he consistently demonstrated exceptional performance. He reliably delivered every assigned task efficiently, on time, and to high standards.\n\nNabeel played a key role in upgrading our Angular application to the latest version, showing strong technical ownership throughout the process. He also successfully refactored a large and complex component into multiple modular sub-components using a modern architectural approach, without introducing any bugs, which significantly improved maintainability and scalability.\n\nHe is never hesitant to work with new technologies and adapts quickly to changing requirements. In addition, he was among the first to take the initiative in adopting TDD and BDD testing practices, showing a strong commitment to writing clean, reliable, and testable code.\n\nOne of his strongest qualities is dependability. I could confidently assign him challenging tasks knowing he would put in 100% effort and ensure timely delivery without compromising quality. He is hardworking and continuously improving his skills, especially in AI-related areas, which is highly relevant in today's rapidly evolving tech landscape. I strongly recommend Nabeel as a valuable addition to any team."
         },
@@ -151,19 +151,20 @@
     ],
     "volunteeringHighlights": [
         {
-            "title": "University Coding Competition — 2nd Place",
+            "title": "2nd place winner of University level Coding Competition",
             "role": "Competitor",
             "organization": "COMSATS University Sahiwal",
             "period": "3rd Semester",
-            "description": "The start of my leadership journey in tech — winning 2nd place gave me the confidence to grow and give back to the community.",
+            "description": "This competition marks the start of my leadership journey in tech. Winning 2nd place gave me the confidence to grow and give back to the community.",
             "bullets": [
                 "Won 2nd place in a university-level coding competition",
                 "Gained confidence to pursue growth in tech and contribute to the community"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/coding-competition/800/500",
-                "https://picsum.photos/seed/coding-competition-2/800/500",
-                "https://picsum.photos/seed/coding-competition-3/800/500"
+                "/images/volunteering/coding-competition/photo-1.webp",
+                "/images/volunteering/coding-competition/photo-2.webp",
+                "/images/volunteering/coding-competition/2nd-position-certificate.pdf",
+                "/images/volunteering/coding-competition/clip-1.mp4"
             ],
             "redirectUrl": ""
         },
@@ -176,13 +177,15 @@
                 "Explained the four main pillars of OOP and their practical applications"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/oop-workshop/800/500",
-                "https://picsum.photos/seed/oop-workshop-2/800/500"
+                "/images/volunteering/oop-workshop/photo-1.webp",
+                "/images/volunteering/oop-workshop/photo-2.jpg",
+                "/images/volunteering/oop-workshop/photo-3.jpg",
+                "/images/volunteering/oop-workshop/clip-1.mp4"
             ],
             "redirectUrl": ""
         },
         {
-            "title": "Tegathon — Web Development Workshop",
+            "title": "Tegathon: Web Development Workshop",
             "role": "Workshop Instructor",
             "organization": "Tegathon (2-day university event)",
             "description": "Led a live web development workshop at Tegathon, a two-day event hosted at our university.",
@@ -191,23 +194,37 @@
                 "Built a simple web application live alongside attendees"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/tegathon-webdev/800/500",
-                "https://picsum.photos/seed/tegathon-webdev-2/800/500"
+                "/images/volunteering/web-dev-workshop/photo-1.webp",
+                "/images/volunteering/web-dev-workshop/photo-2.webp"
             ],
             "redirectUrl": ""
         },
         {
-            "title": "Microsoft Learn Student Ambassador",
+            "title": "Select as Microsoft Learn Student Ambassador",
             "role": "Student Ambassador",
             "organization": "Microsoft Learn",
-            "description": "Selected as a Microsoft Learn Student Ambassador to drive technical learning on campus.",
+            "description": "",
             "bullets": [
-                "Selected as a Microsoft Learn Student Ambassador",
-                "Hosted a Backend Development Bootcamp with a professional backend developer"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/microsoft-learn/800/500",
-                "https://picsum.photos/seed/microsoft-learn-2/800/500"
+                "/images/volunteering/mlsa-selection/photo-1.jpeg",
+                "/images/volunteering/mlsa-selection/mlsa-certificate.pdf",
+                "https://www.youtube.com/watch?v=NXS71_8rMOM"
+            ],
+            "redirectUrl": "https://www.youtube.com/watch?v=NXS71_8rMOM"
+        },
+        {
+            "title": "Backend Development Bootcamp with Industry Expert",
+            "role": "Host & Co-Organizer",
+            "organization": "Microsoft Learn Student Ambassadorship",
+            "description": "Hosted a backend development bootcamp alongside industry expert Mr. Rao Waqas, giving students hands-on exposure to professional backend engineering practices.",
+            "bullets": [
+                "Hosted a backend development bootcamp with industry expert Mr. Rao Waqas",
+                "Connected students with real-world backend engineering experience from industry"
+            ],
+            "imageUrls": [
+                "/images/volunteering/backend-bootcamp/photo-1.webp",
+                "/images/volunteering/backend-bootcamp/photo-2.webp"
             ],
             "redirectUrl": ""
         },
@@ -221,9 +238,7 @@
                 "Led community activities and technical sessions for students"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/gdsc-lead/800/500",
-                "https://picsum.photos/seed/gdsc-lead-2/800/500",
-                "https://picsum.photos/seed/gdsc-lead-3/800/500"
+                "/images/volunteering/gdsc-lead-selection/photo-1.jpeg"
             ],
             "redirectUrl": ""
         },
@@ -236,10 +251,11 @@
                 "Created a video guide on how to participate in Hacktoberfest"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/opensource-talk/800/500",
-                "https://picsum.photos/seed/opensource-talk-2/800/500"
+                "/images/volunteering/open-source-day/photo-1.webp",
+                "/images/volunteering/open-source-day/photo-2.webp",
+                "https://www.youtube.com/watch?v=r_woxipBDnM"
             ],
-            "redirectUrl": ""
+            "redirectUrl": "https://www.youtube.com/watch?v=r_woxipBDnM"
         },
         {
             "title": "Google Developer Summit, Pakistan",
@@ -247,25 +263,32 @@
             "organization": "Google Developer Summit Pakistan",
             "description": "Attended the Google Developer Summit, Pakistan representing my university.",
             "bullets": [
-                "Attended as the COMSATS University Sahiwal lead"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/dev-summit/800/500",
-                "https://picsum.photos/seed/dev-summit-2/800/500"
+                "/images/volunteering/google-developer-summit/photo-1.webp",
+                "/images/volunteering/google-developer-summit/photo-2.webp",
+                "/images/volunteering/google-developer-summit/photo-3.webp",
+                "/images/volunteering/google-developer-summit/photo-4.webp",
+                "/images/volunteering/google-developer-summit/photo-5.webp",
+                "/images/volunteering/google-developer-summit/photo-6.webp",
+                "/images/volunteering/google-developer-summit/photo-7.webp",
+                "/images/volunteering/google-developer-summit/photo-8.webp",
+                "/images/volunteering/google-developer-summit/photo-9.webp"
             ],
             "redirectUrl": ""
         },
         {
-            "title": "Community Day — Keynote Speaker",
+            "title": "Keynote Speaker at Community Day",
             "role": "Keynote Speaker",
             "organization": "Community Day",
-            "description": "Invited to share insights as a keynote speaker at Community Day.",
+            "description": "Talked about the Google Developer Program and the importance of technical communities and mentorship.",
             "bullets": [
                 "Delivered a keynote address at Community Day"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/community-day/800/500",
-                "https://picsum.photos/seed/community-day-2/800/500"
+                "/images/volunteering/community-day-keynote/photo-1.webp",
+                "/images/volunteering/community-day-keynote/photo-2.webp",
+                "/images/volunteering/community-day-keynote/photo-3.webp"
             ],
             "redirectUrl": ""
         },
@@ -275,26 +298,24 @@
             "description": "Hosted an online workshop on Git and GitHub for version control fundamentals.",
             "bullets": [
                 "Conducted an online workshop on Git and GitHub",
-                "Session recording available (link to be added)"
+                "Session recording available on YouTube"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/git-workshop/800/500",
-                "https://picsum.photos/seed/git-workshop-2/800/500"
+                "/images/volunteering/git-github-workshop/photo-1.webp",
+                "https://www.youtube.com/watch?v=8CHODawkavo"
             ],
-            "redirectUrl": ""
+            "redirectUrl": "https://www.youtube.com/watch?v=8CHODawkavo"
         },
         {
-            "title": "Women Tech Makers — Angular Guest & Mentor",
+            "title": "Web development and Angular mentor at Redefine Posible: International Women's Day Event",
             "role": "Guest Speaker & Mentor",
             "organization": "Women Tech Makers",
             "description": "Invited as a guest and mentor for Angular at a Women Tech Makers event.",
             "bullets": [
-                "Mentored participants working with Angular",
-                "Invited as a guest for the Angular track"
+                "Mentored participants about web development and Angular"
             ],
             "imageUrls": [
-                "https://picsum.photos/seed/wtm-angular/800/500",
-                "https://picsum.photos/seed/wtm-angular-2/800/500"
+                "/images/volunteering/wtm-angular/photo-1.jpeg"
             ],
             "redirectUrl": ""
         }

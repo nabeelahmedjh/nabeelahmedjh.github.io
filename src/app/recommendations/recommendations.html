@@ -20,14 +20,11 @@
                 <div class="rec-who">
                     <h3>
                         {{ slide.name }}
-                        <a
+                        <span
                             *ngIf="slide.linkedinUrl"
                             class="rec-linkedin"
-                            [href]="slide.linkedinUrl"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            [attr.aria-label]="'LinkedIn profile of ' + slide.name"
-                        ><fa-icon [icon]="faLinkedin"></fa-icon></a>
+                            [attr.title]="'LinkedIn profile of ' + slide.name"
+                        ><fa-icon [icon]="faLinkedin"></fa-icon></span>
                     </h3>
                     <p class="rec-headline" *ngIf="slide.headline">{{ slide.headline }}</p>
                 </div>

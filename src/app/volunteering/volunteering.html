@@ -1,7 +1,7 @@
 <section id="volunteering-section" class="volunteering-section">
 	<div class="volunteering-header">
 		<p class="eyebrow">Leadership &amp; Community</p>
-		<h2>Volunteering &amp; Leadership</h2>
+		<h2>Leadership</h2>
 		<p>
 			Community involvement, workshops, and leadership roles — from student
 			ambassadorships to speaking and mentoring across tech communities.
@@ -14,7 +14,6 @@
 				<span class="timeline-marker" aria-hidden="true"></span>
 				<div class="timeline-card">
 					<div class="card-content">
-						<p class="card-tag">Leadership</p>
 						<h3>{{ entry.item.title }}</h3>
 						<p class="card-meta">
 							@if (entry.item.role) {<span>{{ entry.item.role }}</span>}
@@ -35,10 +34,18 @@
 						@if (entry.item.redirectUrl) {
 							<a
 								class="card-link"
+								[class.is-recording]="isYouTube(entry.item.redirectUrl)"
 								[href]="entry.item.redirectUrl"
 								target="_blank"
 								rel="noopener noreferrer"
-							>View details</a>
+							>
+								@if (isYouTube(entry.item.redirectUrl)) {
+									<fa-icon [icon]="faYoutube"></fa-icon>
+									<span>Watch recording</span>
+								} @else {
+									<span>View details</span>
+								}
+							</a>
 						}
 					</div>
 
@@ -49,10 +56,22 @@
 									type="button"
 									class="thumb"
 									(click)="openImage(entry, $index)"
-									[attr.aria-label]="'View image ' + ($index + 1) + ' of ' + entry.item.title"
+									[attr.aria-label]="'View media ' + ($index + 1) + ' of ' + entry.item.title"
 								>
-									<img [src]="img" [alt]="entry.item.title + ' — image ' + ($index + 1)" loading="lazy" />
-									<span class="media-zoom" aria-hidden="true"><fa-icon [icon]="faImage"></fa-icon></span>
+									@if (isVideo(img)) {
+										<video [src]="img" muted playsinline preload="metadata"></video>
+										<span class="media-play" aria-hidden="true"><fa-icon [icon]="faPlay"></fa-icon></span>
+									} @else if (isYouTube(img)) {
+										<img [src]="youtubeThumb(img)" [alt]="entry.item.title + ' — recording ' + ($index + 1)" loading="lazy" />
+										<span class="media-play" aria-hidden="true"><fa-icon [icon]="faPlay"></fa-icon></span>
+										<span class="thumb-tag" aria-hidden="true">Recording</span>
+									} @else if (isPdf(img)) {
+										<span class="thumb-doc" aria-hidden="true"><fa-icon [icon]="faFilePdf"></fa-icon></span>
+										<span class="thumb-tag is-doc" aria-hidden="true">PDF</span>
+									} @else {
+										<img [src]="img" [alt]="entry.item.title + ' — image ' + ($index + 1)" loading="lazy" />
+										<span class="media-zoom" aria-hidden="true"><fa-icon [icon]="faImage"></fa-icon></span>
+									}
 									@if (entry.images.length > 1) {
 										<span class="thumb-count" aria-hidden="true">{{ $index + 1 }}/{{ entry.images.length }}</span>
 									}
@@ -90,7 +109,25 @@
 						<fa-icon [icon]="faChevronLeft"></fa-icon>
 					</button>
 				}
-				<img [src]="selected.images[selectedIndex]" [alt]="selected.item.title" />
+				@if (isVideo(selected.images[selectedIndex])) {
+					<video [src]="selected.images[selectedIndex]" controls playsinline></video>
+				} @else if (isYouTube(selected.images[selectedIndex])) {
+					<iframe
+						class="lightbox-embed"
+						[src]="youtubeEmbed(selected.images[selectedIndex])"
+						[title]="selected.item.title + ' — recording'"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				} @else if (isPdf(selected.images[selectedIndex])) {
+					<iframe
+						class="lightbox-pdf"
+						[src]="pdfSrc(selected.images[selectedIndex])"
+						[title]="selected.item.title + ' — certificate'"
+					></iframe>
+				} @else {
+					<img [src]="selected.images[selectedIndex]" [alt]="selected.item.title" />
+				}
 				@if (selected.images.length > 1) {
 					<button type="button" class="lightbox-nav next" (click)="nextImage()" aria-label="Next image">
 						<fa-icon [icon]="faChevronRight"></fa-icon>
@@ -117,7 +154,16 @@
 								(click)="showImage($index)"
 								[attr.aria-label]="'Show image ' + ($index + 1)"
 							>
-								<img [src]="img" alt="" />
+								@if (isVideo(img)) {
+									<span class="thumb-play" aria-hidden="true"><fa-icon [icon]="faPlay"></fa-icon></span>
+								} @else if (isYouTube(img)) {
+									<img [src]="youtubeThumb(img)" alt="" />
+									<span class="media-play" aria-hidden="true"><fa-icon [icon]="faPlay"></fa-icon></span>
+								} @else if (isPdf(img)) {
+									<span class="thumb-doc" aria-hidden="true"><fa-icon [icon]="faFilePdf"></fa-icon></span>
+								} @else {
+									<img [src]="img" alt="" />
+								}
 							</button>
 						}
 					</div>

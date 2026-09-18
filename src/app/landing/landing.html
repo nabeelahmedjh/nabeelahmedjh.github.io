@@ -15,12 +15,13 @@
         }
     </div>
     <div class="hero-content">
-        <p class="hero-tag">Software Engineer</p>
+        <p class="hero-tag">Software Engineer | Graduate Aspirant</p>
         <h1>
             Nabeel Ahmed Jhatial
         </h1>
         <p class="hero-intro">
-            I design and ship reliable full-stack products with clean architecture, solid performance, and user-first thinking. I build software that solves real business problems.
+           I am a Software Engineer with 2 YOE at international, product-based companies. I hold a Bachelor’s degree in Computer Science, graduating with the highest CGPA in my batch (3.82/4.00) and receiving a <b>Gold Medal</b>. Beyond my professional work, I have been actively involved in student communities as a GDSC Lead and MLSA, organizing technical workshops and learning initiatives for students. I am now seeking graduate opportunities to excel in research and acamedia
+
         </p>
         <ul class="nav-items">
             <li class="linkedin"><a href="https://www.linkedin.com/in/nabeelahmedjh/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile"><fa-icon [icon]="faLinkedin"></fa-icon></a></li>
@@ -39,8 +40,14 @@
     <div class="logo-grid">
         @for (company of companies; track company.name) {
             <div class="logo-card">
-                <fa-icon [icon]="company.icon"></fa-icon>
-                <span>{{ company.name }}</span>
+                @if (company.imageUrl) {
+                    <img class="company-logo" [src]="company.imageUrl" [alt]="company.name + ' logo'" loading="lazy" />
+                } @else if (company.icon) {
+                    <fa-icon [icon]="company.icon"></fa-icon>
+                }
+                @if (company.showName || company.icon) {
+                    <span>{{ company.name }}</span>
+                }
             </div>
         }
     </div>
@@ -52,15 +59,11 @@
         <h2>Notable Achievements</h2>
         <p>Highlights and accomplishments from my engineering journey so far.</p>
     </div>
-    <div class="achievements-grid">
+    <ul class="achievements-list">
         @for (item of achievements; track item.title) {
-            <article class="achievement-card">
-                <div class="achievement-icon"><fa-icon [icon]="item.icon"></fa-icon></div>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
-            </article>
+            <li><strong>{{ item.title }}</strong><span>{{ item.description }}</span></li>
         }
-    </div>
+    </ul>
 </section>
 
 <app-recommendations layout="wide" *ngIf="showRecommendations && isHomeSection"></app-recommendations>

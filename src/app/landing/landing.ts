@@ -2,8 +2,7 @@ import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faLinkedin, faGithub, faAngular, faNodeJs, faJs, faPython, faDocker, faGitAlt, faNpm, faGoogle, faMicrosoft, faAmazon, faMeta, faApple, faSpotify } from '@fortawesome/free-brands-svg-icons';
-import { faTrophy, faRocket, faAward, faStar, faCertificate, faMedal } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub, faAngular, faNodeJs, faJs, faPython, faDocker, faGitAlt, faNpm } from '@fortawesome/free-brands-svg-icons';
 import { Navbar } from '../navbar/navbar';
 import { Projects } from '../projects/projects';
 import { Volunteering } from '../volunteering/volunteering';
@@ -20,13 +19,15 @@ interface TechDrop {
 
 interface CompanyLogo {
   name: string;
-  icon: IconDefinition;
+  icon?: IconDefinition;
+  imageUrl?: string;
+  /** Show the name label under an image logo (for mark-only logos). */
+  showName?: boolean;
 }
 
 interface Achievement {
   title: string;
   description: string;
-  icon: IconDefinition;
 }
 
 @Component({
@@ -58,23 +59,21 @@ export class Landing {
     { icon: faGithub, left: 72, delay: -5.6, duration: 11.4, size: 1.8 },
   ];
 
-  // Placeholder company logos (dummy for now)
+  // Companies worked with (logos) plus organizations volunteered for (brand icons)
   readonly companies: CompanyLogo[] = [
-    { name: 'Company One', icon: faGoogle },
-    { name: 'Company Two', icon: faMicrosoft },
-    { name: 'Company Three', icon: faAmazon },
-    { name: 'Company Four', icon: faMeta },
-    { name: 'Company Five', icon: faApple },
-    { name: 'Company Six', icon: faSpotify },
+    { name: 'ExpertFlow', imageUrl: 'images/companies/expertflow-logo.png' },
+    { name: 'ColdSend', imageUrl: 'images/companies/coldsend-logo.svg', showName: true },
+    { name: 'Google', imageUrl: 'images/companies/google-logo.svg', showName: true },
+    { name: 'Microsoft', imageUrl: 'images/companies/microsoft-logo.svg', showName: true },
   ];
 
   readonly achievements: Achievement[] = [
-    { title: 'Led Angular Modernization', description: 'Drove the migration of a large client suite from Angular v8 to v14, improving maintainability and developer experience.', icon: faRocket },
-    { title: 'Shipped GraphQL Gateway', description: 'Designed and delivered a centralized GraphQL gateway that unified search across internal and external data sources.', icon: faAward },
-    { title: 'Faster CI/CD Pipelines', description: 'Reduced CI/CD pipeline completion time, enabling quicker and more reliable releases across the team.', icon: faCertificate },
-    { title: 'Production Platform Launch', description: 'Built and launched Yurt, a full-stack collaborative learning platform with real-time features and an AI assistant.', icon: faTrophy },
-    { title: 'Quality Champion', description: 'Introduced TDD/BDD practices that raised test coverage and release confidence across projects.', icon: faMedal },
-    { title: 'Consistent Delivery', description: 'Recognized for reliably shipping features with clean architecture and user-first thinking.', icon: faStar },
+    { title: 'Led Angular Modernization', description: 'Drove the migration of a large client suite from Angular v8 to v14, improving maintainability and developer experience.' },
+    { title: 'Shipped GraphQL Gateway', description: 'Designed and delivered a centralized GraphQL gateway that unified search across internal and external data sources.' },
+    { title: 'Faster CI/CD Pipelines', description: 'Reduced CI/CD pipeline completion time, enabling quicker and more reliable releases across the team.' },
+    { title: 'Production Platform Launch', description: 'Built and launched Yurt, a full-stack collaborative learning platform with real-time features and an AI assistant.' },
+    { title: 'Quality Champion', description: 'Introduced TDD/BDD practices that raised test coverage and release confidence across projects.' },
+    { title: 'Consistent Delivery', description: 'Recognized for reliably shipping features with clean architecture and user-first thinking.' },
   ];
 
   constructor() {

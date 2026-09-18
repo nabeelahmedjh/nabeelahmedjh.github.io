@@ -78,17 +78,7 @@
             display: inline-flex;
             color: #8dc8ff;
             font-size: 0.95rem;
-            transition: color 0.22s ease, transform 0.22s ease;
-
-            &:hover {
-                color: #00d084;
-                transform: translateY(-1px);
-            }
-
-            &:focus-visible {
-                outline: 2px solid #61f1bc;
-                outline-offset: 2px;
-            }
+            cursor: default;
         }
 
         .rec-headline {
@@ -352,14 +342,6 @@
 
         .rec-who .rec-linkedin {
             color: #0a66c2;
-
-            &:hover {
-                color: #00d084;
-            }
-
-            &:focus-visible {
-                outline-color: #10b981;
-            }
         }
 
         .rec-headline {

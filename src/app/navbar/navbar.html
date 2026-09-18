@@ -5,8 +5,8 @@
             <div class="logo name flex-shrink-0">NJ</div>
             <ul class="flex items-center gap-4 text-lg nav-items flex-1 justify-center">
                 <li><a href="#home-section" (click)="navigateToSection($event, '#home-section')" [class.active-link]="currentSection === '#home-section'" [attr.aria-current]="currentSection === '#home-section' ? 'page' : null">Overview</a></li>
+                <li *ngIf="showVolunteering"><a href="#volunteering-section" (click)="navigateToSection($event, '#volunteering-section')" [class.active-link]="currentSection === '#volunteering-section'" [attr.aria-current]="currentSection === '#volunteering-section' ? 'page' : null">Leadership</a></li>
                 <li *ngIf="showProjects"><a href="#experience-section" (click)="navigateToSection($event, '#experience-section')" [class.active-link]="currentSection === '#experience-section'" [attr.aria-current]="currentSection === '#experience-section' ? 'page' : null">Professional Experience</a></li>
-                <li *ngIf="showVolunteering"><a href="#volunteering-section" (click)="navigateToSection($event, '#volunteering-section')" [class.active-link]="currentSection === '#volunteering-section'" [attr.aria-current]="currentSection === '#volunteering-section' ? 'page' : null">Volunteering</a></li>
                 <li *ngIf="showProjects"><a href="#projects-section" (click)="navigateToSection($event, '#projects-section')" [class.active-link]="currentSection === '#projects-section'" [attr.aria-current]="currentSection === '#projects-section' ? 'page' : null">Projects</a></li>
                 <li *ngIf="showBlog"><a href="https://nabeelahmedjh.hashnode.dev/" target="_blank">Blog</a></li>
                 <li *ngIf="showMedia"><a href="#media">Media</a></li>
@@ -32,8 +32,8 @@
         <div class="mobile-menu-overlay" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()" (keydown.escape)="closeMobileMenu()">
             <ul class="mobile-nav-items">
                 <li><a href="#home-section" (click)="navigateToSection($event, '#home-section')">Overview</a></li>
+                <li *ngIf="showVolunteering"><a href="#volunteering-section" (click)="navigateToSection($event, '#volunteering-section')">Leadership</a></li>
                 <li *ngIf="showProjects"><a href="#experience-section" (click)="navigateToSection($event, '#experience-section')">Professional Experience</a></li>
-                <li *ngIf="showVolunteering"><a href="#volunteering-section" (click)="navigateToSection($event, '#volunteering-section')">Volunteering</a></li>
                 <li *ngIf="showProjects"><a href="#projects-section" (click)="navigateToSection($event, '#projects-section')">Projects</a></li>
                 <li *ngIf="showBlog"><a href="https://nabeelahmedjh.hashnode.dev/" target="_blank" (click)="closeMobileMenu()">Blog</a></li>
                 <li *ngIf="showMedia"><a href="#media" (click)="closeMobileMenu()">Media</a></li>

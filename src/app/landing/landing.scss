@@ -242,9 +242,13 @@
     fa-icon {
         font-size: 2.4rem;
         color: #047857;
-        filter: grayscale(1);
-        opacity: 0.72;
-        transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+
+    img.company-logo {
+        max-height: 48px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
     }
 
     span {
@@ -258,60 +262,39 @@
         transform: translateY(-4px);
         border-color: rgba(134, 239, 172, 0.62);
         box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);
-
-        fa-icon {
-            filter: grayscale(0);
-            opacity: 1;
-        }
     }
 }
 
-.achievements-grid {
-    margin-top: 1.7rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
-}
+.achievements-list {
+    margin: 1.4rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
 
-.achievement-card {
-    padding: 1.3rem;
-    border-radius: 14px;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    background: rgba(255, 255, 255, 0.92);
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-
-    .achievement-icon {
-        width: 48px;
-        height: 48px;
-        display: grid;
-        place-items: center;
-        border-radius: 12px;
-        margin-bottom: 0.9rem;
-        background: rgba(16, 185, 129, 0.14);
-
-        fa-icon {
-            font-size: 1.4rem;
-            color: #047857;
-        }
-    }
-
-    h3 {
-        font-size: 1.2rem;
-        color: #047857;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-    }
-
-    p {
-        margin: 0;
+    li {
+        position: relative;
+        padding-left: 1.4rem;
         color: #334155;
         line-height: 1.55;
-    }
 
-    &:hover {
-        transform: translateY(-4px);
-        border-color: rgba(134, 239, 172, 0.62);
-        box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 50%;
+            background: #000;
+        }
+
+        strong {
+            color: #047857;
+            font-weight: 700;
+            margin-right: 0.4rem;
+        }
     }
 }
 
