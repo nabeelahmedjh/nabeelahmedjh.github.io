@@ -30,8 +30,6 @@
     <app-recommendations *ngIf="showRecommendations"></app-recommendations>
 </section>
 
-<app-recommendations layout="wide" *ngIf="showRecommendations && isHomeSection"></app-recommendations>
-
 <section class="overview-section companies-section" *ngIf="isHomeSection">
     <div class="overview-header">
         <p class="eyebrow">Trusted By</p>
@@ -64,6 +62,8 @@
         }
     </div>
 </section>
+
+<app-recommendations layout="wide" *ngIf="showRecommendations && isHomeSection"></app-recommendations>
 
 <app-projects *ngIf="showProjects && !isHomeSection && !isVolunteeringSection"></app-projects>
 <app-volunteering *ngIf="showVolunteering && isVolunteeringSection"></app-volunteering>
