@@ -3,7 +3,8 @@
         "blog": true,
         "projects": true,
         "featuredProjects": false,
-        "media": false
+        "media": false,
+        "volunteering": true
     },
     "projectHighlights": [
         {
@@ -52,6 +53,156 @@
             "category": "Engineering",
             "title": "Cloud, CI/CD, and Quality",
             "description": "Hands-on with Docker, Kubernetes, Git-based workflows, and TDD/BDD practices to improve release reliability and engineering quality."
+        }
+    ],
+    "volunteeringHighlights": [
+        {
+            "title": "University Coding Competition — 2nd Place",
+            "role": "Competitor",
+            "organization": "COMSATS University Sahiwal",
+            "period": "3rd Semester",
+            "description": "The start of my leadership journey in tech — winning 2nd place gave me the confidence to grow and give back to the community.",
+            "bullets": [
+                "Won 2nd place in a university-level coding competition",
+                "Gained confidence to pursue growth in tech and contribute to the community"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/coding-competition/800/500",
+                "https://picsum.photos/seed/coding-competition-2/800/500",
+                "https://picsum.photos/seed/coding-competition-3/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Object-Oriented Programming Workshop",
+            "role": "Instructor",
+            "description": "Delivered a hands-on workshop series on Object-Oriented Programming in Python.",
+            "bullets": [
+                "Taught two classes on Object-Oriented Programming in Python",
+                "Explained the four main pillars of OOP and their practical applications"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/oop-workshop/800/500",
+                "https://picsum.photos/seed/oop-workshop-2/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Tegathon — Web Development Workshop",
+            "role": "Workshop Instructor",
+            "organization": "Tegathon (2-day university event)",
+            "description": "Led a live web development workshop at Tegathon, a two-day event hosted at our university.",
+            "bullets": [
+                "Explained HTML, CSS, and JavaScript fundamentals",
+                "Built a simple web application live alongside attendees"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/tegathon-webdev/800/500",
+                "https://picsum.photos/seed/tegathon-webdev-2/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Microsoft Learn Student Ambassador",
+            "role": "Student Ambassador",
+            "organization": "Microsoft Learn",
+            "description": "Selected as a Microsoft Learn Student Ambassador to drive technical learning on campus.",
+            "bullets": [
+                "Selected as a Microsoft Learn Student Ambassador",
+                "Hosted a Backend Development Bootcamp with a professional backend developer"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/microsoft-learn/800/500",
+                "https://picsum.photos/seed/microsoft-learn-2/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Google Developer Club Lead",
+            "role": "Club Lead",
+            "organization": "Google Developer Club, COMSATS University Sahiwal",
+            "description": "Selected as Google Developer Club Lead, organizing community sessions and events.",
+            "bullets": [
+                "Selected as Google Developer Club Lead",
+                "Led community activities and technical sessions for students"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/gdsc-lead/800/500",
+                "https://picsum.photos/seed/gdsc-lead-2/800/500",
+                "https://picsum.photos/seed/gdsc-lead-3/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Open Source & Hackathon Fest Talk",
+            "role": "Speaker",
+            "description": "Gave a live talk encouraging open-source contribution and hackathon participation.",
+            "bullets": [
+                "Delivered a live talk on how to contribute to open source",
+                "Created a video guide on how to participate in Hacktoberfest"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/opensource-talk/800/500",
+                "https://picsum.photos/seed/opensource-talk-2/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Google Developer Summit, Pakistan",
+            "role": "Attendee — University Lead",
+            "organization": "Google Developer Summit Pakistan",
+            "description": "Attended the Google Developer Summit, Pakistan representing my university.",
+            "bullets": [
+                "Attended as the COMSATS University Sahiwal lead"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/dev-summit/800/500",
+                "https://picsum.photos/seed/dev-summit-2/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Community Day — Keynote Speaker",
+            "role": "Keynote Speaker",
+            "organization": "Community Day",
+            "description": "Invited to share insights as a keynote speaker at Community Day.",
+            "bullets": [
+                "Delivered a keynote address at Community Day"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/community-day/800/500",
+                "https://picsum.photos/seed/community-day-2/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Git & GitHub Online Workshop",
+            "role": "Instructor",
+            "description": "Hosted an online workshop on Git and GitHub for version control fundamentals.",
+            "bullets": [
+                "Conducted an online workshop on Git and GitHub",
+                "Session recording available (link to be added)"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/git-workshop/800/500",
+                "https://picsum.photos/seed/git-workshop-2/800/500"
+            ],
+            "redirectUrl": ""
+        },
+        {
+            "title": "Women Tech Makers — Angular Guest & Mentor",
+            "role": "Guest Speaker & Mentor",
+            "organization": "Women Tech Makers",
+            "description": "Invited as a guest and mentor for Angular at a Women Tech Makers event.",
+            "bullets": [
+                "Mentored participants working with Angular",
+                "Invited as a guest for the Angular track"
+            ],
+            "imageUrls": [
+                "https://picsum.photos/seed/wtm-angular/800/500",
+                "https://picsum.photos/seed/wtm-angular-2/800/500"
+            ],
+            "redirectUrl": ""
         }
     ]
 }

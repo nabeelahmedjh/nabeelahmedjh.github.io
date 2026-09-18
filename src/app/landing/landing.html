@@ -28,4 +28,45 @@
         </ul>
     </div>
 </section>
-<app-projects *ngIf="showProjects && !isHomeSection"></app-projects>
+
+<section class="overview-section companies-section" *ngIf="isHomeSection">
+    <div class="overview-header">
+        <p class="eyebrow">Trusted By</p>
+        <h2>Companies I Have Worked With</h2>
+        <p>Organizations and teams I've collaborated with to design, build, and ship production software.</p>
+    </div>
+    <div class="logo-grid">
+        @for (company of companies; track company.name) {
+            <div class="logo-card">
+                <fa-icon [icon]="company.icon"></fa-icon>
+                <span>{{ company.name }}</span>
+            </div>
+        }
+    </div>
+</section>
+
+<section class="overview-section achievements-section" *ngIf="isHomeSection">
+    <div class="overview-header">
+        <p class="eyebrow">Milestones</p>
+        <h2>Notable Achievements</h2>
+        <p>Highlights and accomplishments from my engineering journey so far.</p>
+    </div>
+    <div class="achievements-grid">
+        @for (item of achievements; track item.title) {
+            <article class="achievement-card">
+                <div class="achievement-icon"><fa-icon [icon]="item.icon"></fa-icon></div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </article>
+        }
+    </div>
+</section>
+<app-projects *ngIf="showProjects && !isHomeSection && !isVolunteeringSection"></app-projects>
+<app-volunteering *ngIf="showVolunteering && isVolunteeringSection"></app-volunteering>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p class="copyright">&copy; {{ year }} Nabeel Ahmed Jhatial. All rights reserved.</p>
+        <p class="made-with">Made with <span class="heart" aria-hidden="true">&#10084;</span> by <a href="https://www.linkedin.com/in/nabeelahmedjh/" target="_blank" rel="noopener noreferrer">Nabeel</a></p>
+    </div>
+</footer>

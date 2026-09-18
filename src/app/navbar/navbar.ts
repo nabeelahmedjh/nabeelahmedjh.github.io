@@ -13,12 +13,13 @@ import { ConfigService } from '../config.service';
 export class Navbar {
   private readonly cfg = inject(ConfigService);
   isMobileMenuOpen = false;
-  currentSection: '#home-section' | '#projects-section' | '#experience-section' = '#home-section';
+  currentSection: '#home-section' | '#projects-section' | '#experience-section' | '#volunteering-section' = '#home-section';
 
   // Feature flags from runtime config
   readonly showProjects = this.cfg.getFeature('projects');
   readonly showBlog = this.cfg.getFeature('blog');
   readonly showMedia = this.cfg.getFeature('media');
+  readonly showVolunteering = this.cfg.getFeature('volunteering');
   
   // Font Awesome icons
   readonly faBars = faBars;
@@ -36,7 +37,7 @@ export class Navbar {
     this.isMobileMenuOpen = false;
   }
 
-  navigateToSection(event: Event, hash: '#home-section' | '#projects-section' | '#experience-section') {
+  navigateToSection(event: Event, hash: '#home-section' | '#projects-section' | '#experience-section' | '#volunteering-section') {
     event.preventDefault();
     if (window.location.hash !== hash) {
       window.location.hash = hash;
@@ -60,7 +61,7 @@ export class Navbar {
 
   private syncCurrentSection() {
     const hash = window.location.hash;
-    if (hash === '#projects-section' || hash === '#experience-section') {
+    if (hash === '#projects-section' || hash === '#experience-section' || hash === '#volunteering-section') {
       this.currentSection = hash;
       return;
     }

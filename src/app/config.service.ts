@@ -8,6 +8,21 @@ export interface AppConfig {
   engineeringHighlights: EngineeringHighlight[];
   featuredWorkItems: FeaturedWorkItem[];
   projectSections: ProjectSection[];
+  volunteeringHighlights: VolunteeringItem[];
+}
+
+export interface VolunteeringItem {
+  title: string;
+  role?: string;
+  organization?: string;
+  period?: string;
+  description?: string;
+  bullets?: string[];
+  /** Single image (kept for backward compatibility). */
+  imageUrl?: string;
+  /** Multiple images for a gallery. Takes precedence over imageUrl. */
+  imageUrls?: string[];
+  redirectUrl?: string;
 }
 
 export interface EngineeringHighlight {
@@ -35,7 +50,24 @@ const defaultConfig: AppConfig = {
     projects: true,
     featuredProjects: true,
     media: true,
+    volunteering: true,
   },
+  volunteeringHighlights: [
+    {
+      title: 'Leadership Role / Activity Title',
+      role: 'Your role (e.g., President, Team Lead, Volunteer)',
+      organization: 'Organization or club name',
+      period: 'e.g., 2023 – 2024',
+      description: 'Short one-line summary of the activity.',
+      bullets: [
+        'First bullet describing what you led or contributed',
+        'Second bullet describing impact or responsibilities',
+        'Third bullet (add as many as you need)',
+      ],
+      imageUrl: '',
+      redirectUrl: '',
+    },
+  ],
   projectHighlights: [
     {
       title: 'Yurt: Collaborative Learning Platform',
@@ -183,6 +215,7 @@ export class ConfigService {
         engineeringHighlights: (data.engineeringHighlights as EngineeringHighlight[] | undefined) ?? legacyHighlights,
         featuredWorkItems: (data.featuredWorkItems as FeaturedWorkItem[] | undefined) ?? defaultConfig.featuredWorkItems,
         projectSections: (data.projectSections as ProjectSection[] | undefined) ?? defaultConfig.projectSections,
+        volunteeringHighlights: (data.volunteeringHighlights as VolunteeringItem[] | undefined) ?? defaultConfig.volunteeringHighlights,
       };
       this._config.set(merged);
     } catch (err: any) {
