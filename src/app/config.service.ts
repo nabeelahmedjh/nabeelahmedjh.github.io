@@ -19,8 +19,8 @@ export interface RecommendationItem {
   headline?: string;
   /** How the recommender worked with Nabeel. */
   relationship?: string;
-  /** Date the recommendation was given. */
-  date?: string;
+  /** The recommender's own LinkedIn profile URL. */
+  linkedinUrl?: string;
   /** The recommendation body. Paragraphs separated by blank lines. */
   text: string;
 }
@@ -72,7 +72,7 @@ const defaultConfig: AppConfig = {
       name: 'Recommender Name',
       headline: 'Their role or headline',
       relationship: 'How they worked with Nabeel',
-      date: 'Month D, YYYY',
+      linkedinUrl: '',
       text: 'The recommendation text goes here.',
     },
   ],

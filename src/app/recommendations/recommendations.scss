@@ -69,6 +69,26 @@
             font-size: 1.02rem;
             font-weight: 800;
             color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .rec-linkedin {
+            display: inline-flex;
+            color: #8dc8ff;
+            font-size: 0.95rem;
+            transition: color 0.22s ease, transform 0.22s ease;
+
+            &:hover {
+                color: #00d084;
+                transform: translateY(-1px);
+            }
+
+            &:focus-visible {
+                outline: 2px solid #61f1bc;
+                outline-offset: 2px;
+            }
         }
 
         .rec-headline {
@@ -102,8 +122,8 @@
 
     p {
         margin: 0 0 0.6rem;
-        font-size: 0.86rem;
-        line-height: 1.55;
+        font-size: 1rem;
+        line-height: 1.6;
         color: #e5e7eb;
     }
 
@@ -182,6 +202,40 @@
         &.active {
             background: #00d084;
             transform: scale(1.3);
+        }
+
+        &:focus-visible {
+            outline: 2px solid #61f1bc;
+            outline-offset: 2px;
+        }
+    }
+}
+
+// Source-of-truth footnote
+.rec-source {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0.55rem 1rem;
+    border-top: 1px solid rgba(248, 250, 252, 0.12);
+    background: rgba(2, 6, 14, 0.35);
+    font-size: 0.72rem;
+    line-height: 1.45;
+    color: rgba(209, 213, 219, 0.85);
+
+    fa-icon {
+        flex-shrink: 0;
+        color: #8dc8ff;
+    }
+
+    a {
+        color: #8dc8ff;
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
         }
 
         &:focus-visible {
@@ -275,7 +329,7 @@
     align-self: center;
 
     p {
-        font-size: 0.98rem;
+        font-size: 1.05rem;
         line-height: 1.65;
         color: #334155;
         margin: 0 0 0.8rem;
@@ -294,6 +348,18 @@
         .rec-who h3 {
             color: #022c22;
             font-size: 1.2rem;
+        }
+
+        .rec-who .rec-linkedin {
+            color: #0a66c2;
+
+            &:hover {
+                color: #00d084;
+            }
+
+            &:focus-visible {
+                outline-color: #10b981;
+            }
         }
 
         .rec-headline {
@@ -358,5 +424,24 @@
             'head'
             'meta'
             'body';
+    }
+}
+
+:host(.rec-wide) .rec-source {
+    border-top: 1px solid rgba(16, 185, 129, 0.2);
+    background: rgba(240, 253, 244, 0.6);
+    color: #64748b;
+    font-size: 0.8rem;
+
+    fa-icon {
+        color: #0a66c2;
+    }
+
+    a {
+        color: #0a66c2;
+
+        &:focus-visible {
+            outline-color: #10b981;
+        }
     }
 }

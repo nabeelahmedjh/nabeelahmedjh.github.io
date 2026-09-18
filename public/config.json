@@ -9,94 +9,94 @@
     },
     "recommendationItems": [
         {
-            "name": "Muhammad Saud Iqbal",
-            "headline": "Software Engineer",
-            "relationship": "Muhammad Saud was senior to Nabeel but didn't manage Nabeel directly",
-            "date": "July 12, 2026",
-            "text": "I had the opportunity to collaborate with Nabeel and during this time, he consistently demonstrated exceptional standards and commitment. Adaptability and dependability are one his strong attributes. I strongly recommend Nabeel as a valuable addition to any team."
+            "name": "Jawad Bokhari",
+            "headline": "Head of Engineering @ Expertflow",
+            "relationship": "Jawad was head of Engineering team",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
+            "text": "Nabeel was a valuable and capable Software Engineer during his time with us at Expertflow. What stood out most was his consistency: he combined strong technical fundamentals with a genuine sense of ownership over the quality of what he shipped, never treating a task as done until it was done right. He approached problems methodically, taking the time to understand the underlying system rather than settling for the quickest fix, which made his code easy to trust and build on. He was also a dependable collaborator who communicated clearly, followed through on commitments, and raised issues early rather than letting them surface downstream."
         },
         {
-            "name": "Jawad Bokhari",
-            "headline": "Head of Engineering, Expertflow | AI-Native Transformation",
-            "relationship": "Jawad was senior to Nabeel but didn't manage Nabeel directly",
-            "date": "July 10, 2026",
-            "text": "Nabeel was a valuable and capable Software Engineer during his time with us at Expertflow. What stood out most was his consistency: he combined strong technical fundamentals with a genuine sense of ownership over the quality of what he shipped, never treating a task as done until it was done right. He approached problems methodically, taking the time to understand the underlying system rather than settling for the quickest fix, which made his code easy to trust and build on. He was also a dependable collaborator who communicated clearly, followed through on commitments, and raised issues early rather than letting them surface downstream."
+            "name": "Sabahat Haneef",
+            "headline": "Technical Lead @ Expertflow",
+            "relationship": "Ma'am Sabahat was my Lead",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
+            "text": "I had the opportunity to work with Nabeel for almost two years, and during this time, he consistently demonstrated exceptional performance. He reliably delivered every assigned task efficiently, on time, and to high standards.\n\nNabeel played a key role in upgrading our Angular application to the latest version, showing strong technical ownership throughout the process. He also successfully refactored a large and complex component into multiple modular sub-components using a modern architectural approach, without introducing any bugs, which significantly improved maintainability and scalability.\n\nHe is never hesitant to work with new technologies and adapts quickly to changing requirements. In addition, he was among the first to take the initiative in adopting TDD and BDD testing practices, showing a strong commitment to writing clean, reliable, and testable code.\n\nOne of his strongest qualities is dependability. I could confidently assign him challenging tasks knowing he would put in 100% effort and ensure timely delivery without compromising quality. He is hardworking and continuously improving his skills, especially in AI-related areas, which is highly relevant in today's rapidly evolving tech landscape. I strongly recommend Nabeel as a valuable addition to any team."
+        },
+        {
+            "name": "Muhammad Ahsen Jalil",
+            "headline": "Sr. Software Engineer & Lead",
+            "relationship": "Muhammad Ahsen worked with me but on different teams",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
+            "text": "Nabeel is a great technical resource and a very nice teammate. I worked with him in Expertflow, and I found him to be very talented, self-driven, motivated, and a very good & efficient problem solver. He has very good communication and people skills. I see him as a future leader very soon, because of the way he is learning and progressing fast with the latest technology and AI trends. I highly recommend him."
+        },
+        {
+            "name": "Rao Waqas Akram",
+            "headline": "Senior Software Engineer at Beyon Money",
+            "relationship": "Rao was my mentor",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
+            "text": "I had the privilege of mentoring Nabil during university and have seen him grow into a skilled software engineer and a dedicated professional. What impresses me most is not only his technical growth but also his active contribution to the community and his effort in mentoring others. I highly recommend him for both his professional abilities and his positive impact on people around him."
+        },
+        {
+            "name": "Muhammad Safiullah Khan",
+            "headline": "Data Engineer",
+            "relationship": "Safi was my junior in University",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
+            "text": "I was lucky to meet him just a few weeks into my university journey, and his guidance has been a turning point for me ever since.\n\nFrom helping me build a strong technical foundation to encouraging me to take on new challenges, I've learned a lot from him. Working on a project alongside him also showed me how collaborative, skilled, and supportive he is.\n\nHe's truly a blend of knowledge, humility, and leadership that continues to inspire me."
         },
         {
             "name": "Alaa Sayed",
             "headline": "Senior AI Engineer @ Expertflow",
-            "relationship": "Alaa was senior to Nabeel but didn't manage Nabeel directly",
-            "date": "June 1, 2026",
+            "relationship": "I worked with Alaa on the same team",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
             "text": "I had the opportunity to work closely with Nabeel during our time at Expertflow and was consistently impressed by his technical depth, professionalism, and ability to contribute effectively across different phases of project delivery.\n\nNabeel combines strong problem-solving skills with a solid understanding of modern technologies and architectural principles. He is proactive in learning new tools and approaches, brings valuable insights to technical discussions, and consistently focuses on delivering practical and high-quality solutions.\n\nBeyond his technical strengths, Nabeel is a collaborative team member who communicates effectively, works well in cross-functional environments, and can be relied upon to take ownership and drive tasks to completion.\n\nI highly recommend Nabeel and would welcome the opportunity to work with him again in the future."
-        },
-        {
-            "name": "Nadeem Abbas Malik",
-            "headline": "Java | Spring Boot | Micro Services | Backend | Azure | Node JS | CISCO UCCE IVR | CCAAS",
-            "relationship": "Nadeem worked with Nabeel on the same team",
-            "date": "May 20, 2026",
-            "text": "I had the pleasure of working with Nabeel, and he consistently demonstrated professionalism, a strong willingness to learn, and a positive attitude toward every challenge. As a junior team member, he quickly adapted to new technologies, collaborated well with others, and showed great dedication in his work. I'm confident he has a bright future ahead and will be a valuable asset to any team he join."
         },
         {
             "name": "Mariyam Mahaar",
             "headline": "Associate Agile Coach @ExpertFlow || SSM 6.0 || CS-UET'23",
             "relationship": "Mariyam worked with Nabeel on the same team",
-            "date": "May 15, 2026",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
             "text": "I worked with Nabeel Jhatial as his Scrum Master and can highly recommend him. He owns his work, communicates proactively, and consistently delivers without hand-holding, a standout in any agile team."
         },
         {
-            "name": "Muhammad Ahsen Jalil",
-            "headline": "Sr. Software Engineer & Lead | OCJA Certified Java Dev | Ex KYNDRYL | Ex IBMer | BS-IT Gold Medalist",
-            "relationship": "Muhammad Ahsen worked with Nabeel but on different teams",
-            "date": "May 15, 2026",
-            "text": "Nabeel is a great technical resource and a very nice teammate. I worked with him in Expertflow, and I found him to be very talented, self-driven, motivated, and a very good & efficient problem solver. He has very good communication and people skills. I see him as a future leader very soon, because of the way he is learning and progressing fast with the latest technology and AI trends. I highly recommend him."
-        },
-        {
-            "name": "Abraham Lugonzo",
-            "headline": "Java and Node JS Certified & Qualified Software Engineer",
-            "relationship": "Abraham worked with Nabeel but on different teams",
-            "date": "May 15, 2026",
-            "text": "I had the pleasure of working with Nabeel on Angular and Node.js projects. He consistently demonstrated strong technical skills, professionalism, and a positive attitude toward teamwork. He was reliable, quick to learn, and contributed effectively to delivering quality solutions. I would confidently recommend him for any software development role involving Angular, Node.js, and related technologies."
-        },
-        {
-            "name": "Sabahat Haneef",
-            "headline": "Technical Lead at Expertflow | Ex-Dubizzle Labs | Ex-Shopdev | Master's degree in CS from UET, Lahore",
-            "relationship": "Sabahat managed Nabeel directly",
-            "date": "May 10, 2026",
-            "text": "I had the opportunity to work with Nabeel for almost two years, and during this time, he consistently demonstrated exceptional performance. He reliably delivered every assigned task efficiently, on time, and to high standards.\n\nNabeel played a key role in upgrading our Angular application to the latest version, showing strong technical ownership throughout the process. He also successfully refactored a large and complex component into multiple modular sub-components using a modern architectural approach, without introducing any bugs, which significantly improved maintainability and scalability.\n\nHe is never hesitant to work with new technologies and adapts quickly to changing requirements. In addition, he was among the first to take the initiative in adopting TDD and BDD testing practices, showing a strong commitment to writing clean, reliable, and testable code.\n\nOne of his strongest qualities is dependability. I could confidently assign him challenging tasks knowing he would put in 100% effort and ensure timely delivery without compromising quality. He is hardworking and continuously improving his skills, especially in AI-related areas, which is highly relevant in today's rapidly evolving tech landscape. I strongly recommend Nabeel as a valuable addition to any team."
-        },
-        {
             "name": "Muhammad Junaid",
-            "headline": "Software Engineer | Node.js | Typescript | TDD | BDD | Crafting solutions",
+            "headline": "Software Engineer",
             "relationship": "Muhammad worked with Nabeel on the same team",
-            "date": "May 10, 2026",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
             "text": "I highly recommend Nabeel Jhatial for his skills and growth as a software engineer. I worked with him for quite some time and we collaborated on several AI-related projects together. Although he was junior to me, I found him highly motivated, technically capable, and eager to learn. At our previous company, he single handedly scaled a bit complex component. He is a team player, collaborative, dependable, and has great potential as an engineer. It was a good experience working with him, and I would confidently recommend him software engineering related opportunities."
         },
         {
-            "name": "Rao Waqas Akram",
-            "headline": "Senior Software Engineer at Beyon Money",
-            "relationship": "Rao was Nabeel's mentor",
-            "date": "September 3, 2025",
-            "text": "I had the privilege of mentoring Nabil during university and have seen him grow into a skilled software engineer and a dedicated professional. What impresses me most is not only his technical growth but also his active contribution to the community and his effort in mentoring others. I highly recommend him for both his professional abilities and his positive impact on people around him."
+            "name": "Nadeem Abbas Malik",
+            "headline": "Team lead @ Expertflow",
+            "relationship": "Nadeem worked with Nabeel on the same team",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
+            "text": "I had the pleasure of working with Nabeel, and he consistently demonstrated professionalism, a strong willingness to learn, and a positive attitude toward every challenge. As a junior team member, he quickly adapted to new technologies, collaborated well with others, and showed great dedication in his work. I'm confident he has a bright future ahead and will be a valuable asset to any team he join."
         },
         {
-            "name": "Muhammad Safiullah Khan",
-            "headline": "I build data platforms that don't page at 2 AM.",
-            "relationship": "Nabeel was senior to Muhammad Safiullah but didn't manage Muhammad Safiullah directly",
-            "date": "August 26, 2025",
-            "text": "I was lucky to meet him just a few weeks into my university journey, and his guidance has been a turning point for me ever since.\n\nFrom helping me build a strong technical foundation to encouraging me to take on new challenges, I've learned a lot from him. Working on a project alongside him also showed me how collaborative, skilled, and supportive he is.\n\nHe's truly a blend of knowledge, humility, and leadership that continues to inspire me."
+            "name": "Abraham Lugonzo",
+            "headline": "Java Developer @ Expertflow",
+            "relationship": "Abraham worked with Nabeel but on different teams",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
+            "text": "I had the pleasure of working with Nabeel on Angular and Node.js projects. He consistently demonstrated strong technical skills, professionalism, and a positive attitude toward teamwork. He was reliable, quick to learn, and contributed effectively to delivering quality solutions. I would confidently recommend him for any software development role involving Angular, Node.js, and related technologies."
         },
         {
             "name": "Aqib Rehman Pirzada",
-            "headline": "Co-Founder & CTO at Talisman | AI for Automated Plunger Lift & Well Production",
-            "relationship": "Aqib Rehman was Nabeel's mentor",
-            "date": "September 24, 2023",
+            "headline": "Co-Founder & CTO at Talisman",
+            "relationship": "Aqib Rehman was my senior at University",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
             "text": "Nabeel is a natural leader. He is able to inspire and motivate others, and he is always looking for ways to help others grow and develop. He is also a great communicator, and he is able to clearly and concisely explain complex concepts to both technical and non-technical audiences.\n\nIn addition to his leadership skills, Nabeel is also a highly skilled programmer. He is proficient in a variety of programming languages, including Python, Django, and C++. He is also an expert in machine learning and artificial intelligence."
         },
         {
+            "name": "Muhammad Saud Iqbal",
+            "headline": "Software Engineer @ Expertflow",
+            "relationship": "Muhammad Saud was senior to me",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
+            "text": "I had the opportunity to collaborate with Nabeel and during this time, he consistently demonstrated exceptional standards and commitment. Adaptability and dependability are one his strong attributes. I strongly recommend Nabeel as a valuable addition to any team."
+        },
+        {
             "name": "Rohail Iqbal",
-            "headline": "AI Data Engineer | Forward Deployed | From Customer Problems to Production Solutions",
-            "relationship": "Rohail was senior to Nabeel but didn't manage Nabeel directly",
-            "date": "August 20, 2023",
+            "headline": "AI Data Engineer @ Devsinc",
+            "relationship": "Rohail was senior to me during university",
+            "linkedinUrl": "https://www.linkedin.com/in/REPLACE_WITH_RECOMMENDER_PROFILE",
             "text": "I am truly impressed by Nabeel's proficiency as a Python developer. His deep understanding of the language and problem-solving skills are commendable. Beyond his technical expertise, Nabeel's commitment to community and volunteer work reflects his genuine dedication to making a positive impact."
         }
     ],

@@ -18,16 +18,24 @@
             <header class="rec-card-head">
                 <span class="rec-avatar" aria-hidden="true">{{ slide.initials }}</span>
                 <div class="rec-who">
-                    <h3>{{ slide.name }}</h3>
+                    <h3>
+                        {{ slide.name }}
+                        <a
+                            *ngIf="slide.linkedinUrl"
+                            class="rec-linkedin"
+                            [href]="slide.linkedinUrl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            [attr.aria-label]="'LinkedIn profile of ' + slide.name"
+                        ><fa-icon [icon]="faLinkedin"></fa-icon></a>
+                    </h3>
                     <p class="rec-headline" *ngIf="slide.headline">{{ slide.headline }}</p>
                 </div>
                 <fa-icon class="rec-quote-mark" [icon]="faQuoteLeft" aria-hidden="true"></fa-icon>
             </header>
 
-            <p class="rec-meta" *ngIf="slide.date || slide.relationship">
-                <span *ngIf="slide.date">{{ slide.date }}</span>
-                <span *ngIf="slide.date && slide.relationship"> &middot; </span>
-                <span *ngIf="slide.relationship">{{ slide.relationship }}</span>
+            <p class="rec-meta" *ngIf="slide.relationship">
+                {{ slide.relationship }}
             </p>
 
             <div class="rec-body">
@@ -57,4 +65,12 @@
             <fa-icon [icon]="faChevronRight"></fa-icon>
         </button>
     </div>
+
+    <p class="rec-source">
+        <fa-icon [icon]="faLinkedin" aria-hidden="true"></fa-icon>
+        <span>
+            All recommendations are listed on my
+            <a [href]="linkedinUrl" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+        </span>
+    </p>
 </div>

@@ -2,6 +2,7 @@ import { Component, HostBinding, Input, OnDestroy, inject } from '@angular/core'
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronLeft, faChevronRight, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { ConfigService, RecommendationItem } from '../config.service';
 
 /** A recommendation prepared for rendering (text split into paragraphs). */
@@ -42,6 +43,10 @@ export class Recommendations implements OnDestroy {
   readonly faChevronLeft = faChevronLeft;
   readonly faChevronRight = faChevronRight;
   readonly faQuoteLeft = faQuoteLeft;
+  readonly faLinkedin = faLinkedin;
+
+  /** Where the full, up-to-date set of recommendations lives. */
+  readonly linkedinUrl = 'https://www.linkedin.com/in/nabeelahmedjh/';
 
   private readonly autoPlayMs = 7000;
   private autoTimer?: ReturnType<typeof setInterval>;
