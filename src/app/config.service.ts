@@ -42,6 +42,11 @@ export interface RecommendationItem {
 
 export interface VolunteeringItem {
   title: string;
+  /** Optional dedicated page, linked only from the Leadership timeline. */
+  detail?: {
+    slug: string;
+    sections: { heading: string; paragraphs: string[] }[];
+  };
   role?: string;
   organization?: string;
   period?: string;
@@ -151,6 +156,7 @@ const defaultConfig: AppConfig = {
     {
       role: 'Backend Engineer',
       company: 'Coldsend',
+      redirectUrl: 'https://www.coldsend.pro/',
       location: 'Dubai, Remote',
       period: 'May 2026 – Present',
       bullets: [
@@ -162,8 +168,9 @@ const defaultConfig: AppConfig = {
     {
       role: 'Jr. Software Engineer',
       company: 'Expertflow',
+      redirectUrl: 'https://www.expertflow.com/',
       location: 'Switzerland, Remote',
-      period: 'Dec 2023 – May 2026',
+      period: 'Jul 2024 – May 2026',
       bullets: [
         'Developed and maintained MEAN stack applications powering CRM solutions',
         'Designed and implemented a centralized GraphQL gateway microservice, streamlining search across internal and external data sources',
@@ -174,8 +181,9 @@ const defaultConfig: AppConfig = {
     {
       role: 'Software Engineer Intern',
       company: 'Expertflow',
+      redirectUrl: 'https://www.expertflow.com/',
       location: 'Switzerland, Remote',
-      period: '',
+      period: 'Dec 2023 – Jun 2024',
       bullets: [
         "Learned about the company's operations and agile methodologies",
         'Created a POC for a Socket.IO chat application using Node.js and containerized it via Docker',

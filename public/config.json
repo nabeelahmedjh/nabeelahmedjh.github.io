@@ -151,6 +151,7 @@
         {
             "role": "Backend Engineer",
             "company": "Coldsend",
+            "redirectUrl": "https://www.coldsend.pro/",
             "location": "Dubai, Remote",
             "period": "May 2026 – Present",
             "bullets": [
@@ -162,8 +163,9 @@
         {
             "role": "Jr. Software Engineer",
             "company": "Expertflow",
+            "redirectUrl": "https://www.expertflow.com/",
             "location": "Switzerland, Remote",
-            "period": "Dec 2023 – May 2026",
+            "period": "Jul 2024 – May 2026",
             "bullets": [
                 "Developed and maintained MEAN stack applications powering CRM solutions",
                 "Designed and implemented a centralized GraphQL gateway microservice, streamlining search across internal and external data sources",
@@ -174,8 +176,9 @@
         {
             "role": "Software Engineer Intern",
             "company": "Expertflow",
+            "redirectUrl": "https://www.expertflow.com/",
             "location": "Switzerland, Remote",
-            "period": "",
+            "period": "Dec 2023 – Jun 2024",
             "bullets": [
                 "Learned about the company's operations and agile methodologies",
                 "Created a POC for a Socket.IO chat application using Node.js and containerized it via Docker",
@@ -187,6 +190,23 @@
     "volunteeringHighlights": [
         {
             "title": "2nd place winner of University level Coding Competition",
+            "detail": {
+                "slug": "coding-competition-2nd-place",
+                "sections": [
+                    {
+                        "heading": "The competition",
+                        "paragraphs": [
+                            "During my third semester at COMSATS University Sahiwal, I competed in a university-level coding competition and secured 2nd place."
+                        ]
+                    },
+                    {
+                        "heading": "The start of my leadership journey",
+                        "paragraphs": [
+                            "This achievement gave me the confidence to keep growing in tech and to give back to the community. It marks the beginning of the leadership journey shared in this portfolio."
+                        ]
+                    }
+                ]
+            },
             "role": "Competitor",
             "organization": "COMSATS University Sahiwal",
             "period": "3rd Semester",

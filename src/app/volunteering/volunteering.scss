@@ -591,6 +591,81 @@
 	}
 }
 
+.detail-page {
+	.back-link {
+		margin: 0 0 1.5rem;
+	}
+
+	.timeline {
+		margin: 0;
+		padding: 0;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.timeline-marker {
+		display: none;
+	}
+
+	.timeline-card:hover {
+		transform: none;
+		box-shadow: none;
+	}
+
+	.card-content {
+		padding: clamp(1.15rem, 3vw, 2rem);
+	}
+
+	.eyebrow {
+		color: #047857;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		margin: 0.75rem 0 1rem;
+		color: #022c22;
+		font-size: clamp(1.7rem, 4vw, 2.65rem);
+		font-weight: 700;
+		line-height: 1.2;
+		overflow-wrap: anywhere;
+	}
+
+	h2 {
+		color: #047857;
+		font-size: 1.2rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	.detail-story {
+		margin-top: 1.75rem;
+		max-width: 70ch;
+
+		p {
+			color: #334155;
+			line-height: 1.75;
+			margin: 0.6rem 0;
+		}
+	}
+
+	.certificate-link {
+		margin-top: 1.5rem;
+	}
+
+	.gallery-heading {
+		margin: 2rem 0 0;
+	}
+
+	.card-gallery {
+		grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+	}
+}
+
 // ---- Responsive ----
 @media (max-width: 700px) {
 	.timeline {

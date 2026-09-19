@@ -1,4 +1,5 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, Input, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -12,16 +13,18 @@ export interface VolunteeringEntry {
 
 @Component({
   selector: 'app-volunteering',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, RouterLink],
   templateUrl: './volunteering.html',
   styleUrl: './volunteering.scss'
 })
 export class Volunteering {
+  @Input() detailSlug?: string;
+
   private readonly cfg = inject(ConfigService);
   private readonly sanitizer = inject(DomSanitizer);
 
   // Normalize each item into a consistent image list (imageUrls wins over imageUrl)
-  readonly entries: VolunteeringEntry[] = this.cfg.value.volunteeringHighlights.map((item) => ({
+  private readonly allEntries: VolunteeringEntry[] = this.cfg.value.volunteeringHighlights.map((item) => ({
     item,
     images:
       item.imageUrls && item.imageUrls.length
@@ -30,6 +33,12 @@ export class Volunteering {
           ? [item.imageUrl]
           : [],
   }));
+
+  get entries(): VolunteeringEntry[] {
+    return this.detailSlug
+      ? this.allEntries.filter((entry) => entry.item.detail?.slug === this.detailSlug)
+      : this.allEntries;
+  }
 
   // Font Awesome icons
   readonly faImage = faImage;

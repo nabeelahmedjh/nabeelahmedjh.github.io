@@ -1,5 +1,6 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faTimes, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -19,6 +20,8 @@ export interface HireLink {
 })
 export class Navbar {
   private readonly cfg = inject(ConfigService);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
   isMobileMenuOpen = false;
   isHireDialogOpen = false;
   currentSection: '#home-section' | '#projects-section' | '#experience-section' | '#volunteering-section' = '#home-section';
@@ -71,6 +74,11 @@ export class Navbar {
 
   navigateToSection(event: Event, hash: '#home-section' | '#projects-section' | '#experience-section' | '#volunteering-section') {
     event.preventDefault();
+    if (this.route.snapshot.data['detailSlug']) {
+      this.closeMobileMenu();
+      void this.router.navigate(['/'], { fragment: hash.slice(1) });
+      return;
+    }
     if (window.location.hash !== hash) {
       window.location.hash = hash;
     }
@@ -95,6 +103,10 @@ export class Navbar {
   }
 
   private syncCurrentSection() {
+    if (this.route.snapshot.data['detailSlug']) {
+      this.currentSection = '#volunteering-section';
+      return;
+    }
     const hash = window.location.hash;
     if (hash === '#projects-section' || hash === '#experience-section' || hash === '#volunteering-section') {
       this.currentSection = hash;

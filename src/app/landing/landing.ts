@@ -1,5 +1,6 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faLinkedin, faGithub, faAngular, faNodeJs, faJs, faPython, faDocker, faGitAlt, faNpm } from '@fortawesome/free-brands-svg-icons';
@@ -19,6 +20,7 @@ interface TechDrop {
 
 interface CompanyLogo {
   name: string;
+  url?: string;
   icon?: IconDefinition;
   imageUrl?: string;
   /** Show the name label under an image logo (for mark-only logos). */
@@ -41,7 +43,10 @@ interface Achievement {
   styleUrl: './landing.scss'
 })
 export class Landing {
+  @Input() detailSlug?: string;
+
   private readonly cfg = inject(ConfigService);
+  private readonly route = inject(ActivatedRoute);
   readonly showProjects = this.cfg.getFeature('projects');
   readonly showVolunteering = this.cfg.getFeature('volunteering');
   readonly showRecommendations = this.cfg.getFeature('recommendations');
@@ -65,8 +70,8 @@ export class Landing {
 
   // Companies worked with (logos) plus organizations volunteered for (brand icons)
   readonly companies: CompanyLogo[] = [
-    { name: 'ExpertFlow', imageUrl: 'images/companies/expertflow-logo.png' },
-    { name: 'ColdSend', imageUrl: 'images/companies/coldsend-logo.svg', showName: true },
+    { name: 'ExpertFlow', imageUrl: 'images/companies/expertflow-logo.png', url: 'https://www.expertflow.com/' },
+    { name: 'ColdSend', imageUrl: 'images/companies/coldsend-logo.svg', showName: true, url: 'https://www.coldsend.pro/' },
     { name: 'Google', imageUrl: 'images/companies/google-logo.svg', showName: true },
     { name: 'Microsoft', imageUrl: 'images/companies/microsoft-logo.svg', showName: true },
   ];
@@ -79,7 +84,7 @@ export class Landing {
   ];
 
   constructor() {
-    this.syncHomeFromHash();
+    this.syncHomeFromHash('#' + (this.route.snapshot.fragment ?? ''));
   }
 
   @HostListener('window:hashchange')
@@ -95,8 +100,7 @@ export class Landing {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
-  private syncHomeFromHash() {
-    const hash = window.location.hash;
+  private syncHomeFromHash(hash = window.location.hash) {
     this.isHomeSection = hash === '' || hash === '#' || hash === '#home-section';
     this.isVolunteeringSection = hash === '#volunteering-section';
   }

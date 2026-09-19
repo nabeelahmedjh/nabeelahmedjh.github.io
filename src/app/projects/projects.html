@@ -48,7 +48,12 @@
 							}
 						</div>
 						<p class="timeline-org">
-							{{ item.company }}@if (item.location) { &ndash; {{ item.location }} }
+							@if (item.redirectUrl) {
+								<a [href]="item.redirectUrl" target="_blank" rel="noopener noreferrer" [attr.aria-label]="item.company + ' website (opens in a new tab)'">{{ item.company }}</a>
+							} @else {
+								{{ item.company }}
+							}
+							@if (item.location) { &ndash; {{ item.location }} }
 						</p>
 						@if (item.bullets && item.bullets.length) {
 							<ul class="timeline-bullets">

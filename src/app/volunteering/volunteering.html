@@ -1,11 +1,15 @@
-<section id="volunteering-section" class="volunteering-section">
-	<div class="volunteering-header">
-		<p class="eyebrow">Leadership &amp; Community</p>
-		<h2>Leadership</h2>
-		<p>
-			Community involvement, workshops, and leadership roles. A journey from a regular student to speaking and mentoring across tech communities.
-		</p>
-	</div>
+<section [id]="detailSlug ? 'leadership-detail' : 'volunteering-section'" class="volunteering-section" [class.detail-page]="detailSlug">
+	@if (detailSlug) {
+		<a class="card-link back-link" [routerLink]="['/']" fragment="volunteering-section">&larr; Back to Leadership</a>
+	} @else {
+		<div class="volunteering-header">
+			<p class="eyebrow">Leadership &amp; Community</p>
+			<h2>Leadership</h2>
+			<p>
+				Community involvement, workshops, and leadership roles. A journey from a regular student to speaking and mentoring across tech communities.
+			</p>
+		</div>
+	}
 
 	<div class="timeline">
 		@for (entry of entries; track entry.item.title) {
@@ -13,7 +17,12 @@
 				<span class="timeline-marker" aria-hidden="true"></span>
 				<div class="timeline-card">
 					<div class="card-content">
-						<h3>{{ entry.item.title }}</h3>
+						@if (detailSlug) {
+							<p class="eyebrow">Leadership &amp; Community / Achievement</p>
+							<h1>{{ entry.item.title }}</h1>
+						} @else {
+							<h3>{{ entry.item.title }}</h3>
+						}
 						<p class="card-meta">
 							@if (entry.item.role) {<span>{{ entry.item.role }}</span>}
 							@if (entry.item.role && entry.item.organization) {<span class="sep">&middot;</span>}
@@ -30,7 +39,29 @@
 								}
 							</ul>
 						}
-						@if (entry.item.redirectUrl) {
+						@if (detailSlug) {
+							@for (section of entry.item.detail?.sections; track $index) {
+								<section class="detail-story">
+									<h2>{{ section.heading }}</h2>
+									@for (paragraph of section.paragraphs; track $index) {
+										<p>{{ paragraph }}</p>
+									}
+								</section>
+							}
+							@for (media of entry.images; track $index) {
+								@if (isPdf(media)) {
+									<a class="card-link certificate-link" [href]="media" target="_blank" rel="noopener noreferrer">
+										<fa-icon [icon]="faFilePdf"></fa-icon> Open certificate (PDF)
+									</a>
+								}
+							}
+							@if (entry.images.length) {
+								<h2 class="gallery-heading">Photos, certificate &amp; video</h2>
+							}
+						} @else if (entry.item.detail) {
+							<a class="card-link" [routerLink]="['/leadership', entry.item.detail.slug]">View details &rarr;</a>
+						}
+						@if (entry.item.redirectUrl && (detailSlug || !entry.item.detail)) {
 							<a
 								class="card-link"
 								[class.is-recording]="isYouTube(entry.item.redirectUrl)"
@@ -85,6 +116,11 @@
 					}
 				</div>
 			</article>
+		} @empty {
+			@if (detailSlug) {
+				<h1>Achievement unavailable</h1>
+				<p>The details could not be loaded. Please return to Leadership or try again later.</p>
+			}
 		}
 	</div>
 </section>
