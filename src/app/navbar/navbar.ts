@@ -36,8 +36,7 @@ export class Navbar {
   readonly faBars = faBars;
   readonly faTimes = faTimes;
 
-  // TODO: Replace the resume placeholder with the actual Google Drive PDF link.
-  private static readonly RESUME_URL = 'https://drive.google.com/REPLACE_WITH_RESUME_LINK';
+  private static readonly RESUME_URL = 'https://drive.google.com/file/d/19IPGusOWsHy6EvvQO48UpqrAzpmtEf4w/view?usp=sharing';
   private static readonly TRANSCRIPT_URL = 'https://drive.google.com/file/d/12VRUY_3WdlqQVOyXrQXtd6o8eDSpLXZE/view?usp=sharing';
 
   // Items shown in the "Hire me" dialog, in display order.
